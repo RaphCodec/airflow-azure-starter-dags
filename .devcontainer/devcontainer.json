@@ -1,0 +1,37 @@
+{
+	"name": "Airflow Dev",
+	"dockerComposeFile": "../docker-compose.yaml",
+	"service": "airflow-apiserver",
+	"workspaceFolder": "/opt/airflow",
+	"runServices": [
+		"airflow-apiserver",
+		"airflow-scheduler",
+		"airflow-triggerer",
+		"airflow-dag-processor",
+		"redis",
+		"postgres"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8080, 5555],
+	// "shutdownAction": "stopCompose",
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "cat /etc/os-release",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance"
+			]
+		}
+	},
+
+	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "airflow"
+}
