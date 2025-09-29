@@ -1,6 +1,5 @@
 from airflow.sdk import DAG, task
 import pendulum
-import pathlib
 
 with DAG(
     dag_id="duckdb_example",
@@ -23,12 +22,17 @@ with DAG(
     """
 ):
     @task.virtualenv(
-        task_id="virtualenv_duckdb", requirements=["duckdb==1.1.1", "numpy==2.3.0", "pandas==2.3.2"], system_site_packages=False,
-        pip_install_options=""
+        task_id="virtualenv_duckdb", 
+        requirements=["duckdb==1.1.1", "numpy==2.3.0", "pandas==2.3.2"], 
+        system_site_packages=False,
+        venv_cache_path="opt/airflow/tmp"  # Optional: cache path for faster env creation
     )
     def run_query():
         import duckdb
+        import time
         result = duckdb.query("SELECT 42 AS answer").to_df()
+        print("Waiting for 10 seconds to simulate long-running task...")
+        time.sleep(10)
         print("Query result:\n", result)
 
     run_query()
