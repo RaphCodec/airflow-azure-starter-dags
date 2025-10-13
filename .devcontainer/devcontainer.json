@@ -9,7 +9,8 @@
 		"airflow-triggerer",
 		"airflow-dag-processor",
 		"redis",
-		"postgres"
+		"postgres",
+		"caddy"
 	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.

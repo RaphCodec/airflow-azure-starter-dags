@@ -218,18 +218,7 @@ logs/
 
 # Docker
 *.log
-docker-compose.override.yml
-docker-compose.override.yaml
 .env
 .env.*.local
 .docker/
 docker/
-docker-compose.yaml
-docker-compose.yml
-Dockerfile*
-
-# Caddy
-Caddyfile
-
-
-requirements.txt
