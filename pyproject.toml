@@ -1,0 +1,22 @@
+[project]
+name = "airflow-azure-starter-dags"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-airflow-providers-amazon>=9.21.0",
+    "apache-airflow-providers-github>=2.11.0",
+    "apache-airflow-providers-google>=19.5.0",
+    "apache-airflow-providers-microsoft-azure>=12.10.3",
+    "apache-airflow-providers-odbc>=4.11.1",
+    "apache-airflow-providers-openlineage>=2.10.2",
+    "apache-airflow-providers-oracle>=4.4.0",
+    "apache-airflow-providers-sftp>=5.7.0",
+    "apache-airflow-providers-smtp>=2.4.2",
+    "apache-airflow-providers-snowflake>=6.9.1",
+    "astronomer-cosmos[dbt-all]>=1.10.3",
+    "dag-factory>=1.0.1",
+    "dbt-duckdb>=1.10.1",
+    "dlt>=1.22.0",
+]
