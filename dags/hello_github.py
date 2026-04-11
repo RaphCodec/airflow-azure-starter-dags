@@ -1,18 +1,21 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import dag, task
 from datetime import datetime
 
-def hello_world():
-    print("Hello, from Github!")
+from structlog import get_logger
 
-with DAG(
-    dag_id='hello_github_dag',
+log = get_logger()
+
+@dag(
     start_date=datetime(2025, 8, 25),
     schedule='@hourly',
     catchup=False,
     tags=['example'],
-) as dag:
-    hello_task = PythonOperator(
-        task_id='hello_github_task',
-        python_callable=hello_world,
-    )
+)
+def hello_world():
+    @task
+    def print_message():
+        log.info('Hello, from GitHub!')
+
+    print_message()
+
+hello_world()
