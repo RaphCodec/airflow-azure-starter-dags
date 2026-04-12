@@ -32,7 +32,10 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-			]
+				"mechatroner.rainbow-csv",
+				"adamviola.parquet-explorer",
+				"charliermarsh.ruff"
+			],
 		}
 	},
 
