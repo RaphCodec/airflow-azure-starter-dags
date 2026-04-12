@@ -12,6 +12,10 @@
 		"postgres"
 	],
 
+	"containerEnv": {
+		"AZURE_CONFIG_DIR": "/opt/airflow/.azure"
+	},
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
@@ -27,7 +31,7 @@
 		"vscode": {
 			"extensions": [
 				"ms-python.python",
-				"ms-python.vscode-pylance"
+				"ms-python.vscode-pylance",
 			]
 		}
 	},
