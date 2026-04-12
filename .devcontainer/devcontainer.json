@@ -34,7 +34,17 @@
 				"ms-python.vscode-pylance",
 				"mechatroner.rainbow-csv",
 				"adamviola.parquet-explorer",
-				"charliermarsh.ruff"
+				"charliermarsh.ruff",
+				"redhat.vscode-yaml",
+				"mtxr.sqltools",
+				"koszti.snowflake-driver-for-sqltools",
+				"snowflake.snowflake-vsc",
+				"ms-mssql.mssql",
+				"sqlfluff.vscode-sqlfluff",
+				"necatiarslan.airflow-vscode-extension",
+				"aaron-bond.better-comments",
+				"streetsidesoftware.code-spell-checker",
+				"tamasfe.even-better-toml"
 			],
 		}
 	},
