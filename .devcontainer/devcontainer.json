@@ -1,6 +1,6 @@
 {
 	"name": "Airflow Dev",
-	"dockerComposeFile": "../docker-compose.yaml",
+	"dockerComposeFile": "docker-compose.yaml",
 	"service": "airflow-apiserver",
 	"workspaceFolder": "/opt/airflow",
 	"runServices": [
