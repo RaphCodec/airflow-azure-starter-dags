@@ -4,25 +4,38 @@ title: Getting Started
 
 # Getting Started
 
-Follow these steps to preview the ProperDocs site locally and edit docs.
+Follow these steps to set up the repository and start developing with a devcontainer.
 
-1. Create and activate a virtual environment
+## Developing with a Dev Container (recommended)
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
+!!! note "Prerequisites"
+	- Install Docker Desktop and ensure Docker is running on your machine.
+	- Install VS Code.
 
-2. Install ProperDocs and the MaterialX theme (you may already have these in the project)
 
-```bash
-pip install properdocs properdocs-materialx
-```
+This repository includes configuration for a VS Code devcontainer so you can develop and preview docs in an isolated, reproducible environment.
 
-3. Serve the docs locally
 
-```bash
-properdocs serve -c docs/properdocs.yml
-```
+1. Clone the repo
 
-If `properdocs` exposes different CLI commands in your installation, consult its documentation — these are the typical commands used to serve or build a ProperDocs site.
+	```bash
+	git clone https://github.com/RaphCodec/airflow-azure-starter-dags.git
+	cd airflow-azure-starter-dags
+	```
+
+
+2. Required VS Code extensions
+
+	- **Dev Containers** (Microsoft) — provides the "Reopen in Container" command and container workspace features.
+	- **Docker** (Microsoft) — useful for managing containers and images from VS Code.
+
+3. Open the repo in VS Code and start the devcontainer
+
+	- Open the `airflow-azure-starter-dags` folder in VS Code.
+	- Press Cmd+Shift+P (Ctrl+Shift+P on Windows/Linux) → `Dev Containers: Reopen in Container`.
+
+The devcontainer will build and start; once it finishes building you can view the Airflow web UI at `http://localhost:8080`.
+
+Notes:
+
+- Make sure Docker is running before reopening in the container; devcontainers require the Docker daemon.
