@@ -1,0 +1,14 @@
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.15.0" # Use latest for ruff-check and ruff-format support
+hooks = [
+    { id = "ruff-check", args = ["--fix"], stages = ["pre-commit"] },
+    { id = "ruff-format", stages = ["pre-commit"] }
+]
+
+[[repos]]
+repo = "https://github.com/commitizen-tools/commitizen"
+rev = "v4.10.0"
+hooks = [
+    { id = "commitizen", stages = ["commit-msg"] }
+]

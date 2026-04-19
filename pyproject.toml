@@ -1,0 +1,52 @@
+[project]
+name = "airflow-azure-starter-dags"
+version = "0.1.0"
+description = "Starter Apache Airflow DAGs for Azure deployments"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.commitizen]
+name = "cz_customize"
+version = "0.1.0"              # mostly unused if you're skipping cz bump
+tag_format = "v$version"
+update_changelog_on_bump = false
+
+# Keep commits readable and consistent
+[tool.commitizen.customize]
+# Only include the scope parentheses when a scope is provided
+message_template = "{{type}}{% if scope %}({{scope}}){% endif %}: {{subject}}"
+example = "feat(payments_dag): add fraud scoring step"
+schema = "<type>(<scope>): <subject>"
+schema_pattern = "^(feat|fix|refactor|perf|chore|docs)(\\([a-zA-Z0-9_\\-]+\\))?: .+"
+
+# Types tailored for Airflow work
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "type"
+message = "Select the type of change:"
+choices = [
+  { value = "feat", name = "feat: new DAG or task" },
+  { value = "fix", name = "fix: bug fix" },
+  { value = "refactor", name = "refactor: code change without behavior change" },
+  { value = "perf", name = "perf: performance improvement" },
+  { value = "chore", name = "chore: config/infra changes" },
+  { value = "docs", name = "docs: documentation only" }
+]
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "scope"
+message = "Scope (e.g. DAG id, airflow, infra):"
+default = ""
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "subject"
+message = "Short description:"
