@@ -50,3 +50,8 @@ default = ""
 type = "input"
 name = "subject"
 message = "Short description:"
+
+[tool.uv.workspace]
+members = [
+    "docs",
+]
