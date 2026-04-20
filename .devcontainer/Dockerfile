@@ -10,3 +10,5 @@ RUN apt-get update \
 USER airflow
 ADD requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+RUN uv tool install prek
+RUN uv tool install commitizen 

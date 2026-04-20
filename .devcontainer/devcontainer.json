@@ -31,6 +31,9 @@
 	// "postCreateCommand": "cat /etc/os-release",
 
 	// Configure tool-specific properties.
+	// "settings": {
+	// 	"terminal.integrated.cwd": "/opt/airflow"
+	// },
 	"customizations": {
 		"vscode": {
 			"extensions": [
