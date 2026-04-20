@@ -17,7 +17,11 @@
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {}
+	},
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/opt/airflow,type=bind,consistency=cached",
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [8080, 5555],
