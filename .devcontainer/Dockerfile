@@ -1,5 +1,4 @@
-ARG AIRFLOW_VERSION=3.1.6
-FROM apache/airflow:${AIRFLOW_VERSION}
+FROM apache/airflow:3.1.6-python3.12
 USER root
 # Install Azure CLI
 RUN apt-get update \
@@ -10,5 +9,5 @@ RUN apt-get update \
 USER airflow
 ADD requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN uv tool install prek
-RUN uv tool install commitizen 
+RUN uv tool install prek@latest 
+RUN uv tool install commitizen@latest 
