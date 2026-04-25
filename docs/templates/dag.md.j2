@@ -15,7 +15,7 @@ tags: [{% for t in tags %}"{{ t }}"{% if not loop.last %}, {% endif %}{% endfor 
 
 ## Details
 
-{{ doc_html | safe }}
+{{ doc_md }}
 
 ## Tasks ({{ tasks|length }})
 

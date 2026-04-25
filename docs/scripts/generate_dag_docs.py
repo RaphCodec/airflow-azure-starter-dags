@@ -3,10 +3,6 @@ import sys
 import argparse
 import logging
 from datetime import datetime
-try:
-    import markdown as _markdown
-except Exception:
-    _markdown = None
 from airflow.models import DagBag
 from jinja2 import Environment, FileSystemLoader
 
@@ -97,17 +93,6 @@ def main(dag_folder=None, output_dir=None, templates_dir=None, no_cleanup=False,
             'tasks': tasks,
         }
 
-        # Convert doc_md to HTML when possible and pass as `doc_html` for safe rendering
-        raw_md = context.get('doc_md', '') or ''
-        if _markdown:
-            try:
-                doc_html = _markdown.markdown(raw_md, extensions=['fenced_code', 'tables', 'toc'])
-            except Exception:
-                doc_html = '<pre>' + raw_md + '</pre>'
-        else:
-            # fallback: include raw markdown (renderer may still convert it later)
-            doc_html = raw_md
-        context['doc_html'] = doc_html
 
         rendered = template.render(**context)
         filename = f"{dag_id}.md"
