@@ -1,7 +1,21 @@
+---
+title: "duckdb_example"
+description: "A simple dag to show the use of a python virtual env with duckdb"
+tags: []
+---
+
 # duckdb_example
 
-**Short Description:** A simple dag to show the use of a python virtual env with duckdb
-**Long Description:** 
+- **DAG ID:** `duckdb_example`
+- **Description:** A simple dag to show the use of a python virtual env with duckdb
+- **Schedule:** @daily
+- **Catchup:** False
+- **Start date:** 2025-08-01T05:00:00+00:00
+- **Tags:** 
+
+## Details
+ 
+
     ### Example Virtualenv DAG
 
     This DAG demonstrates how to use the **`@task.virtualenv`** decorator in Airflow.
@@ -14,9 +28,12 @@
     - The virtual environment is created only for this task.
     - Great for tasks needing custom dependencies without bloating the global Airflow image.
     
-**Schedule:** @daily  
-**Tags:** 
 
-## Tasks
+## Tasks (1)
 
-- virtualenv_duckdb
+| Task ID | Operator | Retries | Doc |
+|---|---:|---:|---|
+| `virtualenv_duckdb` | _PythonVirtualenvDecoratedOperator | 0 |  |
+
+---
+_This file is auto-generated. Regenerate with the project's `generate_dag_docs.py` script._

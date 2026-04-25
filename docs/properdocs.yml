@@ -36,6 +36,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - DAGs: dags/index.md
   - Update Docs: update-docs.md
 markdown_extensions:
   - toc:
@@ -58,3 +59,6 @@ markdown_extensions:
       combine_header_slug: true
   - pymdownx.details
 
+plugins:
+  - search
+  - awesome-pages
