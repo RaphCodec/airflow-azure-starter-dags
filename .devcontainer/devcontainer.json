@@ -24,7 +24,7 @@
 	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080, 5555],
+	"forwardPorts": [8080, 5555, 8000],
 	// "shutdownAction": "stopCompose",
 
 	// Uncomment the next line to run commands after the container is created.
