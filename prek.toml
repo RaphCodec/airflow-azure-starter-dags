@@ -12,3 +12,9 @@ rev = "v4.10.0"
 hooks = [
     { id = "commitizen", stages = ["commit-msg"] }
 ]
+
+[[repos]]
+repo = "local"
+hooks = [
+    { id = "generate-dag-docs", name = "Generate DAG Docs", entry = "python docs/scripts/generate_dag_docs.py", language = "system", pass_filenames = false, files = "^dags/" }
+]
