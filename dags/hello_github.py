@@ -10,6 +10,10 @@ log = get_logger()
     schedule='@hourly',
     catchup=False,
     tags=['example'],
+    doc_md="""
+    # Description
+    This is a basic hello world dag to ensure that Airflow is working properly.
+    """
 )
 def hello_world():
     @task
