@@ -1,0 +1,11 @@
+# {{ dag_id }}
+
+**Short Description:** {{ description }}
+**Long Description:** {{doc_md}}
+**Schedule:** {{ schedule }}  
+**Tags:** {{ tags | join(", ") }}
+
+## Tasks
+{% for task in tasks %}
+- {{ task }}
+{% endfor %}

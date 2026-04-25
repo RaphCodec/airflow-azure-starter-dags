@@ -36,6 +36,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Update Docs: update-docs.md
 markdown_extensions:
   - toc:
       permalink: true
