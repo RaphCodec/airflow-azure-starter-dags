@@ -21,8 +21,6 @@
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
 
-	"workspaceMount": "source=${localWorkspaceFolder},target=/opt/airflow,type=bind,consistency=cached",
-
 	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
