@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/getting-started/</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/update-docs/</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/duckdb_example/</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/hello_github/</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+</urlset>
