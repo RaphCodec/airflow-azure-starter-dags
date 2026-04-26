@@ -1,5 +1,6 @@
 site_name: "Airflow Azure Starter DAGs"
 site_description: "Starter DAGs and example workflows for Airflow on Azure"
+site_url: "https://raphcodec.github.io/airflow-azure-starter-dags"
 repo_url: "https://github.com/RaphCodec/airflow-azure-starter-dags"
 docs_dir: src
 theme:
