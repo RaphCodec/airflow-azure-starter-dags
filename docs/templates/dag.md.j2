@@ -1,0 +1,29 @@
+---
+title: "{{ (dag_display_name|default(dag_id)) }}"
+description: "{{ (description or '') | replace('\n', ' ') }}"
+tags: [{% for t in tags %}"{{ t }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+---
+
+# {{ dag_display_name|default(dag_id) }}
+
+- **DAG ID:** `{{ dag_id }}`
+- **Description:** {{ description or "No description" }}
+- **Schedule:** {{ schedule }}
+- **Catchup:** {{ catchup }}
+- **Start date:** {{ start_date }}
+- **Tags:** {{ tags | join(", ") }}
+
+## Details
+
+{{ doc_md }}
+
+## Tasks ({{ tasks|length }})
+
+| Task ID | Operator | Retries | Doc |
+|---|---:|---:|---|
+{% for t in tasks %}
+| `{{ t.task_id }}` | {{ t.operator }} | {{ t.retries }} | {{ (t.doc or '') | replace('\n', ' ') | truncate(160) }} |
+{% endfor %}
+
+---
+_This file is auto-generated. Regenerate with the project's `generate_dag_docs.py` script._

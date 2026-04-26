@@ -1,0 +1,71 @@
+site_name: "Airflow Azure Starter DAGs"
+site_description: "Starter DAGs and example workflows for Airflow on Azure"
+repo_url: "https://github.com/RaphCodec/airflow-azure-starter-dags"
+docs_dir: src
+theme:
+  name: materialx
+  favicon: material/airplane-takeoff
+  icon:
+    logo: material/airplane-takeoff
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep-purple
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: cyan
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+extra_css:
+  - src/assets/theme.css
+extra_javascript:
+  - src/assets/theme.js
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - DAGs: dags/index.md
+  - Update Docs: update-docs.md
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.details
+
+plugins:
+  - search
+  - awesome-pages
+  - document-dates:
+      position: top            # Display position: top(after title) bottom(end of document), default: top
+      type: date               # Date type: date datetime timeago, default: date
+      exclude:                 # List of excluded files (support unix shell-style wildcards)
+        - temp.md                  # Example: exclude the specified file
+        - blog/*                   # Example: exclude all files in blog folder, including subfolders
+        - '*/index.md'             # Example: exclude all index.md files in any subfolders
