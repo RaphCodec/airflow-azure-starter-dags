@@ -227,3 +227,7 @@ Caddyfile
 
 # Azure
 .azure
+
+# ProperDocs
+docs/_build/
+document_dates
