@@ -1,26 +1,33 @@
-name: Deploy ProperDocs to GitHub Pages
+name: Deploy docs to gh-pages
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
+      - 'docs/**'
+      - 'docs/properdocs.yml'
+      - 'docs/pyproject.toml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          fetch-depth: 0
+
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
 
       - name: Install uv (astral) and enable cache
         uses: astral-sh/setup-uv@v7
@@ -33,18 +40,20 @@ jobs:
         working-directory: docs
 
       - name: Install docs dependencies (uv sync)
-        run: uv sync --all-extras --dev
+        run: uv sync --all-extras --dev --locked || uv sync --all-extras --dev
         working-directory: docs
 
-      - name: Build site with ProperDocs (via `uv`)
+      - name: Build site with ProperDocs (via uv)
         run: uv run properdocs build --site-dir site
         working-directory: docs
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/site
-          destination_branch: gh-pages
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Prepare authenticated push
+        run: |
+          # ensure we can push using the GITHUB_TOKEN
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Deploy with ProperDocs gh-deploy
+        run: |
+          # force-deploy the built site to gh-pages using ProperDocs
+          uv run properdocs gh-deploy --force
+        working-directory: docs
