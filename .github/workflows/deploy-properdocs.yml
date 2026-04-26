@@ -10,8 +10,8 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pages: write
-      contents: read
 
     steps:
       - name: Checkout
@@ -40,13 +40,11 @@ jobs:
         run: uv run properdocs build --site-dir site
         working-directory: docs
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: site
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/site
+          destination_branch: gh-pages
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
