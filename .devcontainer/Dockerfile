@@ -7,7 +7,8 @@ RUN apt-get update \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 USER airflow
-ADD requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-RUN uv tool install prek@latest 
-RUN uv tool install commitizen@latest 
+COPY requirements.txt .
+RUN uv pip install --no-cache-dir -r requirements.txt
+RUN uv tool install pre-commit@latest \
+ && uv tool install commitizen@latest \
+ && uv tool install ruff@latest
