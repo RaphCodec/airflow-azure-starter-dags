@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 
 [tool.ruff]
 target-version = "py312"
-line-length = 88
+line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
@@ -24,7 +24,7 @@ update_changelog_on_bump = false
 message_template = "{{type}}{% if scope %}({{scope}}){% endif %}: {{subject}}"
 example = "feat(payments_dag): add fraud scoring step"
 schema = "<type>(<scope>): <subject>"
-schema_pattern = "^(feat|fix|refactor|perf|chore|docs)(\\([a-zA-Z0-9_\\-]+\\))?: .+"
+schema_pattern = "^(feat|fix|refactor|perf|ci|test|deps|chore|docs|wip)(\\([a-zA-Z0-9_\\-]+\\))?: .+"
 
 # Types tailored for Airflow work
 [[tool.commitizen.customize.questions]]
@@ -36,8 +36,12 @@ choices = [
   { value = "fix", name = "fix: bug fix" },
   { value = "refactor", name = "refactor: code change without behavior change" },
   { value = "perf", name = "perf: performance improvement" },
+  { value = "ci", name = "ci: CI/CD pipeline changes" },
+  { value = "test", name = "test: add or update tests" },
+  { value = "deps", name = "deps: dependency or requirements update" },
   { value = "chore", name = "chore: config/infra changes" },
-  { value = "docs", name = "docs: documentation only" }
+  { value = "docs", name = "docs: documentation only" },
+  { value = "wip", name = "wip: work in progress" }
 ]
 
 [[tool.commitizen.customize.questions]]

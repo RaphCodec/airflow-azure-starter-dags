@@ -14,7 +14,30 @@ hooks = [
 ]
 
 [[repos]]
+repo = "https://github.com/codespell-project/codespell"
+rev = "v2.3.0"
+hooks = [
+    { id = "codespell", args = ["--ignore-words=docs/.codespell-wordlist.txt", "--skip=logs,__pycache__,.git,.venv,venv"],
+      files = "^docs/",
+      exclude = '''(?x)(^\.git/|\.pyc$|package-lock\.json$|pnpm-lock\.yaml$|/dist/)''',
+      stages = ["pre-commit"]
+    }
+]
+
+[[repos]]
+repo = "https://github.com/sqlfluff/sqlfluff"
+rev = "4.2.2"
+hooks = [
+    { id = "sqlfluff-lint", name = "sqlfluff-lint (mssql)", args = ["--dialect", "tsql", "--ignore", "templating,parsing,lexing"], files = "^include/.*\\.tsql\\.sql$", stages = ["pre-commit"] },
+    { id = "sqlfluff-fix", name = "sqlfluff-fix (mssql)", args = ["--dialect", "tsql", "--ignore", "templating,parsing,lexing"], files = "^include/.*\\.tsql\\.sql$", stages = ["pre-commit"] },
+    { id = "sqlfluff-lint", name = "sqlfluff-lint (snowflake)", args = ["--dialect", "snowflake", "--ignore", "templating,parsing,lexing"], files = "^include/.*\\.snowflake\\.sql$", stages = ["pre-commit"] },
+    { id = "sqlfluff-fix", name = "sqlfluff-fix (snowflake)", args = ["--dialect", "snowflake", "--ignore", "templating,parsing,lexing"], files = "^include/.*\\.snowflake\\.sql$", stages = ["pre-commit"] }
+]
+
+
+[[repos]]
 repo = "local"
 hooks = [
-    { id = "generate-dag-docs", name = "Generate DAG Docs", entry = "python docs/scripts/generate_dag_docs.py", language = "system", pass_filenames = false, files = "^dags/" }
+    { id = "generate-dag-docs", name = "Generate DAG Docs", entry = "python docs/scripts/generate_dag_docs.py", language = "system", pass_filenames = false, files = "^dags/", stages = ["pre-commit"]},
+    { id = "generate-devcontainer-docs", name = "Generate Dev Container Docs", entry = "python docs/scripts/generate_devcontainer_docs.py", language = "system", pass_filenames = false, files = "^\\.devcontainer/", stages = ["pre-commit"]}
 ]
