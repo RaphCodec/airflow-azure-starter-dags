@@ -1,5 +1,5 @@
-from airflow.sdk import DAG, task
 import pendulum
+from airflow.sdk import DAG, task
 
 with DAG(
     dag_id="duckdb_example",
@@ -19,17 +19,20 @@ with DAG(
     - The `requirements` parameter pins the package version (`duckdb==1.1.1`).
     - The virtual environment is created only for this task.
     - Great for tasks needing custom dependencies without bloating the global Airflow image.
-    """
+    """,
 ):
+
     @task.virtualenv(
-        task_id="virtualenv_duckdb", 
-        requirements=["duckdb==1.1.1", "numpy==2.3.0", "pandas==2.3.2"], 
+        task_id="virtualenv_duckdb",
+        requirements=["duckdb==1.1.1", "numpy==2.3.0", "pandas==2.3.2"],
         system_site_packages=False,
-        venv_cache_path="opt/airflow/tmp"  # Optional: cache path for faster env creation
+        venv_cache_path="opt/airflow/tmp",  # Optional: cache path for faster env creation
     )
     def run_query():
-        import duckdb
         import time
+
+        import duckdb
+
         result = duckdb.query("SELECT 42 AS answer").to_df()
         print("Waiting for 10 seconds to simulate long-running task...")
         time.sleep(10)

@@ -10,9 +10,7 @@ from jinja2 import Environment, FileSystemLoader
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Defaults relative to docs/scripts
-DEFAULT_TEMPLATES_DIR = os.path.normpath(
-    os.path.join(BASE_DIR, "..", "src", "templates")
-)
+DEFAULT_TEMPLATES_DIR = os.path.normpath(os.path.join(BASE_DIR, "..", "src", "templates"))
 DEFAULT_OUTPUT_DIR = os.path.normpath(os.path.join(BASE_DIR, "..", "src", "dags"))
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -57,10 +55,7 @@ def stable_value(v):
     if hasattr(v, "total_seconds"):
         return v.total_seconds()
     if isinstance(v, dict):
-        return {
-            k: stable_value(val)
-            for k, val in sorted(v.items(), key=lambda item: str(item[0]))
-        }
+        return {k: stable_value(val) for k, val in sorted(v.items(), key=lambda item: str(item[0]))}
     if isinstance(v, set):
         return [stable_value(i) for i in sorted(v, key=lambda item: str(item))]
     if isinstance(v, (list, tuple)):
@@ -90,9 +85,7 @@ def main(
 
     os.makedirs(output_dir, exist_ok=True)
 
-    env = Environment(
-        loader=FileSystemLoader(templates_dir), trim_blocks=True, lstrip_blocks=True
-    )
+    env = Environment(loader=FileSystemLoader(templates_dir), trim_blocks=True, lstrip_blocks=True)
     try:
         template = env.get_template("dag.md.j2")
     except Exception as e:
@@ -117,10 +110,7 @@ def main(
         tasks = [gather_task_info(t) for t in dag.tasks]
 
         raw_params = getattr(dag, "params", {}) or {}
-        params = {
-            k: stable_value(v.value if hasattr(v, "value") else v)
-            for k, v in raw_params.items()
-        }
+        params = {k: stable_value(v.value if hasattr(v, "value") else v) for k, v in raw_params.items()}
         params = dict(sorted(params.items(), key=lambda item: str(item[0])))
 
         raw_default_args = getattr(dag, "default_args", {}) or {}
@@ -134,8 +124,7 @@ def main(
             "doc_md": getattr(dag, "doc_md", "") or "",
             "schedule": getattr(dag, "schedule_interval", getattr(dag, "schedule", "")),
             "start_date": format_dt(
-                getattr(dag, "start_date", None)
-                or (getattr(dag, "default_args", {}) or {}).get("start_date")
+                getattr(dag, "start_date", None) or (getattr(dag, "default_args", {}) or {}).get("start_date")
             ),
             "catchup": getattr(dag, "catchup", ""),
             "tags": sorted((getattr(dag, "tags", []) or []), key=str.casefold),
@@ -143,9 +132,7 @@ def main(
             "params": params,
             "default_args": default_args,
             "max_active_runs": getattr(dag, "max_active_runs", ""),
-            "max_active_tasks": getattr(
-                dag, "max_active_tasks", getattr(dag, "concurrency", "")
-            ),
+            "max_active_tasks": getattr(dag, "max_active_tasks", getattr(dag, "concurrency", "")),
         }
 
         rendered = template.render(**context)
@@ -166,15 +153,11 @@ def main(
         except Exception:
             team = None
 
-        index_entries.append(
-            {"display": context["dag_display_name"], "file": filename, "team": team}
-        )
+        index_entries.append({"display": context["dag_display_name"], "file": filename, "team": team})
 
     # remove stale files
     if not no_cleanup:
-        existing_files = {
-            f for f in os.listdir(output_dir) if f.endswith(".md") and f != "index.md"
-        }
+        existing_files = {f for f in os.listdir(output_dir) if f.endswith(".md") and f != "index.md"}
         stale_files = existing_files - current_dag_files
         for f in sorted(stale_files):
             try:
@@ -223,19 +206,11 @@ def main(
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Generate markdown docs for Airflow DAGs"
-    )
-    parser.add_argument(
-        "--out", help="Output directory for generated docs (defaults to docs/src/dags)"
-    )
+    parser = argparse.ArgumentParser(description="Generate markdown docs for Airflow DAGs")
+    parser.add_argument("--out", help="Output directory for generated docs (defaults to docs/src/dags)")
     parser.add_argument("--dags", help="Path to DAGs folder (defaults to repo/dags)")
-    parser.add_argument(
-        "--templates", help="Path to templates directory (defaults to docs/templates)"
-    )
-    parser.add_argument(
-        "--no-cleanup", action="store_true", help="Do not remove stale generated files"
-    )
+    parser.add_argument("--templates", help="Path to templates directory (defaults to docs/templates)")
+    parser.add_argument("--no-cleanup", action="store_true", help="Do not remove stale generated files")
     parser.add_argument("--verbose", action="store_true", help="Enable debug logging")
     args = parser.parse_args()
     main(

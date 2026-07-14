@@ -10,15 +10,26 @@ tags: ["example"]
 - **Description:** A simple DAG to say hello to GitHub
 - **Schedule:** @hourly
 - **Catchup:** False
-- **Start date:** 2025-08-25T00:00:00+00:00
+- **Start date:** 2025-08-25T04:00:00+00:00
+- **Max active runs:** 16
+- **Max active tasks:** 16
 - **Tags:** example
 
+
+
 ## Details
- 
+
 
     # Description
     This is a basic hello world dag to ensure that Airflow is working properly.
     
+
+## Task Flow
+
+```mermaid
+flowchart LR
+  print_message
+```
 
 ## Tasks (1)
 

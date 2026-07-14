@@ -7,12 +7,8 @@ from jinja2 import Environment, FileSystemLoader
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEVCONTAINER_DIR = os.path.normpath(os.path.join(BASE_DIR, "..", "..", ".devcontainer"))
-DEFAULT_TEMPLATES_DIR = os.path.normpath(
-    os.path.join(BASE_DIR, "..", "src", "templates")
-)
-DEFAULT_OUTPUT = os.path.normpath(
-    os.path.join(BASE_DIR, "..", "src", "devcontainer.md")
-)
+DEFAULT_TEMPLATES_DIR = os.path.normpath(os.path.join(BASE_DIR, "..", "src", "templates"))
+DEFAULT_OUTPUT = os.path.normpath(os.path.join(BASE_DIR, "..", "src", "devcontainer.md"))
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -100,16 +96,10 @@ def main(output=None, templates_dir=None):
         templates_dir = DEFAULT_TEMPLATES_DIR
 
     dockerfile = parse_dockerfile(os.path.join(DEVCONTAINER_DIR, "Dockerfile"))
-    requirements = group_requirements(
-        parse_requirements(os.path.join(DEVCONTAINER_DIR, "requirements.txt"))
-    )
-    devcontainer = parse_devcontainer(
-        os.path.join(DEVCONTAINER_DIR, "devcontainer.json")
-    )
+    requirements = group_requirements(parse_requirements(os.path.join(DEVCONTAINER_DIR, "requirements.txt")))
+    devcontainer = parse_devcontainer(os.path.join(DEVCONTAINER_DIR, "devcontainer.json"))
 
-    env = Environment(
-        loader=FileSystemLoader(templates_dir), trim_blocks=True, lstrip_blocks=True
-    )
+    env = Environment(loader=FileSystemLoader(templates_dir), trim_blocks=True, lstrip_blocks=True)
     template = env.get_template("devcontainer.md.j2")
 
     rendered = template.render(

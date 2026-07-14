@@ -11,10 +11,14 @@ tags: []
 - **Schedule:** @daily
 - **Catchup:** False
 - **Start date:** 2025-08-01T05:00:00+00:00
+- **Max active runs:** 16
+- **Max active tasks:** 16
 - **Tags:** 
 
+
+
 ## Details
- 
+
 
     ### Example Virtualenv DAG
 
@@ -28,6 +32,13 @@ tags: []
     - The virtual environment is created only for this task.
     - Great for tasks needing custom dependencies without bloating the global Airflow image.
     
+
+## Task Flow
+
+```mermaid
+flowchart LR
+  virtualenv_duckdb
+```
 
 ## Tasks (1)
 
