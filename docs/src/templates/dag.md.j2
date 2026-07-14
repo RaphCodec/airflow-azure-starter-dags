@@ -1,0 +1,68 @@
+---
+title: "{{ (dag_display_name|default(dag_id)) }}"
+description: "{{ (description or '') | replace('\n', ' ') }}"
+tags: [{% for t in tags %}"{{ t }}"{% if not loop.last %}, {% endif %}{% endfor %}]
+---
+
+# {{ dag_display_name|default(dag_id) }}
+
+- **DAG ID:** `{{ dag_id }}`
+- **Description:** {{ description or "No description" }}
+- **Schedule:** {{ schedule }}
+- **Catchup:** {{ catchup }}
+- **Start date:** {{ start_date }}
+- **Max active runs:** {{ max_active_runs }}
+- **Max active tasks:** {{ max_active_tasks }}
+- **Tags:** {{ tags | join(", ") }}
+
+{% if default_args %}
+## Default Args
+
+| Key | Value |
+|---|---|
+{% for k, v in default_args.items() %}
+| `{{ k }}` | `{{ v }}` |
+{% endfor %}
+{% endif %}
+
+{% if params %}
+## Params
+
+| Name | Default |
+|---|---|
+{% for k, v in params.items() %}
+| `{{ k }}` | `{{ v }}` |
+{% endfor %}
+{% endif %}
+
+## Details
+
+{{ doc_md }}
+
+## Task Flow
+
+```mermaid
+flowchart LR
+{% set ns = namespace(targets=[]) %}
+{% for t in tasks %}{% for d in t.downstream %}{% set ns.targets = ns.targets + [d] %}{% endfor %}{% endfor %}
+{% for t in tasks %}
+{% if t.downstream %}
+{% for d in t.downstream %}
+  {{ t.task_id }} --> {{ d }}
+{% endfor %}
+{% elif t.task_id not in ns.targets %}
+  {{ t.task_id }}
+{% endif %}
+{% endfor %}
+```
+
+## Tasks ({{ tasks|length }})
+
+| Task ID | Operator | Retries | Doc |
+|---|---:|---:|---|
+{% for t in tasks %}
+| `{{ t.task_id }}` | {{ t.operator }} | {{ t.retries }} | {{ (t.doc or '') | replace('\n', ' ') | truncate(160) }} |
+{% endfor %}
+
+---
+_This file is auto-generated. Regenerate with the project's `generate_dag_docs.py` script._

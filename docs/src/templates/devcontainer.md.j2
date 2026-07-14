@@ -1,0 +1,54 @@
+---
+title: "Dev Container"
+description: "Base image, installed packages, ports, and VS Code extensions for the Airflow dev container."
+---
+
+# Dev Container
+
+_This file is auto-generated. Regenerate with `docs/scripts/generate_devcontainer_docs.py`._
+
+## Base Image
+
+```dockerfile
+{{ dockerfile }}
+```
+
+## uv Tools
+
+These tools are installed globally via `uv tool install`:
+
+| Tool |
+|---|
+{% for tool in uv_tools %}
+| `{{ tool }}` |
+{% endfor %}
+
+## Python Libraries
+
+{% for group, packages in requirements.items() %}
+### {{ group }}
+
+| Package | Version |
+|---|---|
+{% for pkg in packages %}
+{% set parts = pkg.split('==') %}
+| `{{ parts[0] }}` | {{ parts[1] if parts|length > 1 else '' }} |
+{% endfor %}
+
+{% endfor %}
+
+## Forwarded Ports
+
+| Port | Description |
+|---|---|
+{% for p in ports %}
+| `{{ p.port }}` | {{ p.label }} |
+{% endfor %}
+
+## VS Code Extensions
+
+| Extension ID |
+|---|
+{% for ext in extensions %}
+| `{{ ext }}` |
+{% endfor %}
