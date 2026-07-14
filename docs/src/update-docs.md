@@ -8,4 +8,4 @@ To run the ProperDocs development server frm inside the container cd into the do
 uv run properdocs serve -a 0.0.0.0:8000
 ```
 
-View the development site as `localhost:8000` in your web broswer.
+View the development site as `localhost:8000` in your web browser.

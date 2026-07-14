@@ -1,0 +1,6 @@
+# Project specific words that shouldn't be flagged as mispellings
+# Add one word per line
+Airflow
+Snowflake
+connexion
+AKS
