@@ -1,0 +1,2567 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Base image, installed packages, ports, and VS Code extensions for the Airflow dev container.">
+      
+      
+      
+        <link rel="canonical" href="https://raphcodec.github.io/airflow-azure-starter-dags/devcontainer/">
+      
+      
+      
+      
+        
+      
+      
+      
+        
+        
+        
+          
+          <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10 8 3.57l-1.91.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.42 5.31-1.43 4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86'/%3E%3C/svg%3E">
+        
+      
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.1.3">
+    
+    
+      
+        <title>Dev Container - Airflow Azure Starter DAGs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dadc26f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.204eaadb.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../src/assets/theme.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dev-container" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Airflow Azure Starter DAGs" class="md-header__button md-logo" aria-label="Airflow Azure Starter DAGs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10 8 3.57l-1.91.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.42 5.31-1.43 4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Airflow Azure Starter DAGs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dev Container
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/RaphCodec/airflow-azure-starter-dags" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Airflow Azure Starter DAGs" class="md-nav__button md-logo" aria-label="Airflow Azure Starter DAGs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10 8 3.57l-1.91.51 4.14 7.17-4.97 1.33-1.97-1.54-1.45.39 1.82 3.16.77 1.33 1.6-.42 5.31-1.43 4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86"/></svg>
+
+    </a>
+    Airflow Azure Starter DAGs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/RaphCodec/airflow-azure-starter-dags" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAGs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#base-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uv-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Libraries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache-airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apache Airflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airflow-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forwarded-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forwarded Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VS Code Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="dev-container">Dev Container<a class="headerlink" href="#dev-container" title="Permanent link">&para;</a></h1>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-07-14'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-07-14T06:12:09-04:00'>2026-07-14</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-07-14'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-07-14T10:12:09+00:00'>2026-07-14</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='RaphCodec' data-tippy-content data-tippy-raw='<a href="mailto:46251144+RaphCodec@users.noreply.github.com">RaphCodec</a>'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='46251144+RaphCodec@users.noreply.github.com' /></div></div></div></div></div>
+
+<p><em>This file is auto-generated. Regenerate with <code>docs/scripts/generate_devcontainer_docs.py</code>.</em></p>
+<h2 id="base-image">Base Image<a class="headerlink" href="#base-image" title="Permanent link">&para;</a></h2>
+<div class="language-dockerfile highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">apache/airflow:3.1.7-python3.12</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">USER</span><span class="w"> </span><span class="s">root</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>unixodbc-dev<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>curl<span class="w"> </span>apt-transport-https<span class="w"> </span>gnupg2<span class="w"> </span>ca-certificates<span class="w"> </span>lsb-release<span class="w"> </span>iputils-ping<span class="w"> </span>net-tools<span class="w"> </span>ripgrep<span class="w"> </span>fish<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://packages.microsoft.com/keys/microsoft.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/trusted.gpg.d/microsoft-prod.gpg<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft-prod.gpg] https://packages.microsoft.com/debian/12/prod bookworm main&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/apt/sources.list.d/mssql-release.list<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft-prod.gpg] https://packages.microsoft.com/repos/azure-cli/ bookworm main&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/apt/sources.list.d/azure-cli.list<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">ACCEPT_EULA</span><span class="o">=</span>Y<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>msodbcsql18<span class="w"> </span>azure-cli<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>usermod<span class="w"> </span>--shell<span class="w"> </span>/usr/bin/fish<span class="w"> </span>airflow
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">USER</span><span class="w"> </span><span class="s">airflow</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>apache-airflow<span class="o">==</span><span class="si">${</span><span class="nv">AIRFLOW_VERSION</span><span class="si">}</span><span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">RUN</span><span class="w"> </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>prek@latest<span class="se">\</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>commitizen@latest<span class="se">\</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>ruff@latest
+</span></code></pre></div>
+<h2 id="uv-tools">uv Tools<a class="headerlink" href="#uv-tools" title="Permanent link">&para;</a></h2>
+<p>These tools are installed globally via <code>uv tool install</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prek@latest\</code></td>
+</tr>
+<tr>
+<td><code>commitizen@latest\</code></td>
+</tr>
+<tr>
+<td><code>ruff@latest</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="python-libraries">Python Libraries<a class="headerlink" href="#python-libraries" title="Permanent link">&para;</a></h2>
+<h3 id="apache-airflow">Apache Airflow<a class="headerlink" href="#apache-airflow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apache-airflow-core</code></td>
+<td>3.1.7</td>
+</tr>
+<tr>
+<td><code>apache-airflow-task-sdk</code></td>
+<td>1.1.7</td>
+</tr>
+<tr>
+<td><code>apache-airflow</code></td>
+<td>3.1.7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="airflow-providers">Airflow Providers<a class="headerlink" href="#airflow-providers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apache-airflow-providers-amazon</code></td>
+<td>9.21.0</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-common-compat</code></td>
+<td>1.13.1</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-common-io</code></td>
+<td>1.7.1</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-common-sql</code></td>
+<td>1.31.0</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-github</code></td>
+<td>2.11.0</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-google</code></td>
+<td>19.5.0</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-http</code></td>
+<td>5.6.4</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-microsoft-azure</code></td>
+<td>12.10.3</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-odbc</code></td>
+<td>4.11.1</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-openlineage</code></td>
+<td>2.10.2</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-oracle</code></td>
+<td>4.4.0</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-sftp</code></td>
+<td>5.7.0</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-smtp</code></td>
+<td>2.4.2</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-snowflake</code></td>
+<td>6.9.1</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-ssh</code></td>
+<td>4.3.1</td>
+</tr>
+<tr>
+<td><code>apache-airflow-providers-standard</code></td>
+<td>1.11.1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="azure">Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>azure-batch</code></td>
+<td>14.2.0</td>
+</tr>
+<tr>
+<td><code>azure-common</code></td>
+<td>1.1.28</td>
+</tr>
+<tr>
+<td><code>azure-core</code></td>
+<td>1.38.2</td>
+</tr>
+<tr>
+<td><code>azure-cosmos</code></td>
+<td>4.14.6</td>
+</tr>
+<tr>
+<td><code>azure-datalake-store</code></td>
+<td>0.0.53</td>
+</tr>
+<tr>
+<td><code>azure-identity</code></td>
+<td>1.25.2</td>
+</tr>
+<tr>
+<td><code>azure-keyvault-secrets</code></td>
+<td>4.10.0</td>
+</tr>
+<tr>
+<td><code>azure-kusto-data</code></td>
+<td>6.0.2</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-containerinstance</code></td>
+<td>10.1.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-containerregistry</code></td>
+<td>14.0.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-core</code></td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-cosmosdb</code></td>
+<td>9.9.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-datafactory</code></td>
+<td>9.2.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-datalake-nspkg</code></td>
+<td>3.0.1</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-datalake-store</code></td>
+<td>0.5.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-nspkg</code></td>
+<td>3.0.2</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-resource</code></td>
+<td>25.0.0</td>
+</tr>
+<tr>
+<td><code>azure-mgmt-storage</code></td>
+<td>24.0.0</td>
+</tr>
+<tr>
+<td><code>azure-nspkg</code></td>
+<td>3.0.2</td>
+</tr>
+<tr>
+<td><code>azure-servicebus</code></td>
+<td>7.14.3</td>
+</tr>
+<tr>
+<td><code>azure-storage-blob</code></td>
+<td>12.28.0</td>
+</tr>
+<tr>
+<td><code>azure-storage-file-datalake</code></td>
+<td>12.23.0</td>
+</tr>
+<tr>
+<td><code>azure-storage-file-share</code></td>
+<td>12.24.0</td>
+</tr>
+<tr>
+<td><code>azure-synapse-artifacts</code></td>
+<td>0.21.0</td>
+</tr>
+<tr>
+<td><code>azure-synapse-spark</code></td>
+<td>0.7.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a2wsgi</code></td>
+<td>1.10.10</td>
+</tr>
+<tr>
+<td><code>adal</code></td>
+<td>1.2.7</td>
+</tr>
+<tr>
+<td><code>adlfs</code></td>
+<td>2026.2.0</td>
+</tr>
+<tr>
+<td><code>aenum</code></td>
+<td>3.1.16</td>
+</tr>
+<tr>
+<td><code>agate</code></td>
+<td>1.9.1</td>
+</tr>
+<tr>
+<td><code>aiofiles</code></td>
+<td>25.1.0</td>
+</tr>
+<tr>
+<td><code>aiohappyeyeballs</code></td>
+<td>2.6.1</td>
+</tr>
+<tr>
+<td><code>aiohttp-cors</code></td>
+<td>0.8.1</td>
+</tr>
+<tr>
+<td><code>aiohttp</code></td>
+<td>3.13.3</td>
+</tr>
+<tr>
+<td><code>aiosignal</code></td>
+<td>1.4.0</td>
+</tr>
+<tr>
+<td><code>aiosmtplib</code></td>
+<td>5.1.0</td>
+</tr>
+<tr>
+<td><code>aiosqlite</code></td>
+<td>0.21.0</td>
+</tr>
+<tr>
+<td><code>alembic</code></td>
+<td>1.18.4</td>
+</tr>
+<tr>
+<td><code>annotated-doc</code></td>
+<td>0.0.4</td>
+</tr>
+<tr>
+<td><code>annotated-types</code></td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td><code>anyio</code></td>
+<td>4.12.1</td>
+</tr>
+<tr>
+<td><code>argcomplete</code></td>
+<td>3.6.3</td>
+</tr>
+<tr>
+<td><code>asgiref</code></td>
+<td>3.11.1</td>
+</tr>
+<tr>
+<td><code>asn1crypto</code></td>
+<td>1.5.1</td>
+</tr>
+<tr>
+<td><code>astronomer-cosmos</code></td>
+<td>1.10.3</td>
+</tr>
+<tr>
+<td><code>asyncssh</code></td>
+<td>2.22.0</td>
+</tr>
+<tr>
+<td><code>attrs</code></td>
+<td>25.4.0</td>
+</tr>
+<tr>
+<td><code>authlib</code></td>
+<td>1.6.8</td>
+</tr>
+<tr>
+<td><code>aws-embedded-metrics</code></td>
+<td>3.3.1</td>
+</tr>
+<tr>
+<td><code>awswrangler</code></td>
+<td>3.15.1</td>
+</tr>
+<tr>
+<td><code>babel</code></td>
+<td>2.18.0</td>
+</tr>
+<tr>
+<td><code>backoff</code></td>
+<td>2.2.1</td>
+</tr>
+<tr>
+<td><code>backports-tarfile</code></td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td><code>bcrypt</code></td>
+<td>5.0.0</td>
+</tr>
+<tr>
+<td><code>beautifulsoup4</code></td>
+<td>4.14.3</td>
+</tr>
+<tr>
+<td><code>boto3-stubs</code></td>
+<td>1.42.54</td>
+</tr>
+<tr>
+<td><code>boto3</code></td>
+<td>1.42.54</td>
+</tr>
+<tr>
+<td><code>botocore-stubs</code></td>
+<td>1.42.41</td>
+</tr>
+<tr>
+<td><code>botocore</code></td>
+<td>1.42.54</td>
+</tr>
+<tr>
+<td><code>cachetools</code></td>
+<td>6.2.6</td>
+</tr>
+<tr>
+<td><code>cadwyn</code></td>
+<td>5.4.6</td>
+</tr>
+<tr>
+<td><code>cattrs</code></td>
+<td>26.1.0</td>
+</tr>
+<tr>
+<td><code>certifi</code></td>
+<td>2025.1.31</td>
+</tr>
+<tr>
+<td><code>cffi</code></td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td><code>chardet</code></td>
+<td>5.2.0</td>
+</tr>
+<tr>
+<td><code>charset-normalizer</code></td>
+<td>3.4.4</td>
+</tr>
+<tr>
+<td><code>click</code></td>
+<td>8.3.1</td>
+</tr>
+<tr>
+<td><code>clickhouse-connect</code></td>
+<td>0.11.0</td>
+</tr>
+<tr>
+<td><code>clickhouse-driver</code></td>
+<td>0.2.10</td>
+</tr>
+<tr>
+<td><code>cloudpickle</code></td>
+<td>3.1.1</td>
+</tr>
+<tr>
+<td><code>colorama</code></td>
+<td>0.4.6</td>
+</tr>
+<tr>
+<td><code>colorful</code></td>
+<td>0.5.8</td>
+</tr>
+<tr>
+<td><code>colorlog</code></td>
+<td>6.10.1</td>
+</tr>
+<tr>
+<td><code>cron-descriptor</code></td>
+<td>2.0.6</td>
+</tr>
+<tr>
+<td><code>croniter</code></td>
+<td>6.0.0</td>
+</tr>
+<tr>
+<td><code>cryptography</code></td>
+<td>46.0.5</td>
+</tr>
+<tr>
+<td><code>daff</code></td>
+<td>1.4.2</td>
+</tr>
+<tr>
+<td><code>dag-factory</code></td>
+<td>1.0.1</td>
+</tr>
+<tr>
+<td><code>databricks-sdk</code></td>
+<td>0.47.0</td>
+</tr>
+<tr>
+<td><code>databricks-sql-connector</code></td>
+<td>4.2.5</td>
+</tr>
+<tr>
+<td><code>db-dtypes</code></td>
+<td>1.5.0</td>
+</tr>
+<tr>
+<td><code>dbt-adapters</code></td>
+<td>1.22.5</td>
+</tr>
+<tr>
+<td><code>dbt-athena</code></td>
+<td>1.10.0</td>
+</tr>
+<tr>
+<td><code>dbt-bigquery</code></td>
+<td>1.11.0</td>
+</tr>
+<tr>
+<td><code>dbt-clickhouse</code></td>
+<td>1.10.0</td>
+</tr>
+<tr>
+<td><code>dbt-common</code></td>
+<td>1.37.2</td>
+</tr>
+<tr>
+<td><code>dbt-core</code></td>
+<td>1.10.19</td>
+</tr>
+<tr>
+<td><code>dbt-databricks</code></td>
+<td>1.10.9</td>
+</tr>
+<tr>
+<td><code>dbt-duckdb</code></td>
+<td>1.10.1</td>
+</tr>
+<tr>
+<td><code>dbt-exasol</code></td>
+<td>1.10.4</td>
+</tr>
+<tr>
+<td><code>dbt-extractor</code></td>
+<td>0.6.0</td>
+</tr>
+<tr>
+<td><code>dbt-oracle</code></td>
+<td>1.10.0</td>
+</tr>
+<tr>
+<td><code>dbt-postgres</code></td>
+<td>1.10.0</td>
+</tr>
+<tr>
+<td><code>dbt-protos</code></td>
+<td>1.0.431</td>
+</tr>
+<tr>
+<td><code>dbt-redshift</code></td>
+<td>1.10.1</td>
+</tr>
+<tr>
+<td><code>dbt-semantic-interfaces</code></td>
+<td>0.9.0</td>
+</tr>
+<tr>
+<td><code>dbt-snowflake</code></td>
+<td>1.11.2</td>
+</tr>
+<tr>
+<td><code>dbt-spark</code></td>
+<td>1.10.1</td>
+</tr>
+<tr>
+<td><code>dbt-teradata</code></td>
+<td>1.10.1</td>
+</tr>
+<tr>
+<td><code>dbt-vertica</code></td>
+<td>1.0.4</td>
+</tr>
+<tr>
+<td><code>decorator</code></td>
+<td>5.2.1</td>
+</tr>
+<tr>
+<td><code>deepdiff</code></td>
+<td>8.6.1</td>
+</tr>
+<tr>
+<td><code>deprecated</code></td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td><code>deprecation</code></td>
+<td>2.1.0</td>
+</tr>
+<tr>
+<td><code>dill</code></td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td><code>distlib</code></td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td><code>distro</code></td>
+<td>1.9.0</td>
+</tr>
+<tr>
+<td><code>dlt</code></td>
+<td>1.22.0</td>
+</tr>
+<tr>
+<td><code>dnspython</code></td>
+<td>2.8.0</td>
+</tr>
+<tr>
+<td><code>docstring-parser</code></td>
+<td>0.17.0</td>
+</tr>
+<tr>
+<td><code>duckdb</code></td>
+<td>1.4.4</td>
+</tr>
+<tr>
+<td><code>email-validator</code></td>
+<td>2.3.0</td>
+</tr>
+<tr>
+<td><code>et-xmlfile</code></td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td><code>fastapi-cli</code></td>
+<td>0.0.23</td>
+</tr>
+<tr>
+<td><code>fastapi</code></td>
+<td>0.117.1</td>
+</tr>
+<tr>
+<td><code>fastjsonschema</code></td>
+<td>2.21.2</td>
+</tr>
+<tr>
+<td><code>fastuuid</code></td>
+<td>0.14.0</td>
+</tr>
+<tr>
+<td><code>filelock</code></td>
+<td>3.24.3</td>
+</tr>
+<tr>
+<td><code>frozenlist</code></td>
+<td>1.8.0</td>
+</tr>
+<tr>
+<td><code>fsspec</code></td>
+<td>2025.12.0</td>
+</tr>
+<tr>
+<td><code>gcloud-aio-auth</code></td>
+<td>5.4.2</td>
+</tr>
+<tr>
+<td><code>gcloud-aio-bigquery</code></td>
+<td>7.1.0</td>
+</tr>
+<tr>
+<td><code>gcloud-aio-storage</code></td>
+<td>9.6.1</td>
+</tr>
+<tr>
+<td><code>gcsfs</code></td>
+<td>2025.12.0</td>
+</tr>
+<tr>
+<td><code>gitdb</code></td>
+<td>4.0.12</td>
+</tr>
+<tr>
+<td><code>gitpython</code></td>
+<td>3.1.46</td>
+</tr>
+<tr>
+<td><code>giturlparse</code></td>
+<td>0.14.0</td>
+</tr>
+<tr>
+<td><code>google-ads</code></td>
+<td>29.1.0</td>
+</tr>
+<tr>
+<td><code>google-analytics-admin</code></td>
+<td>0.27.0</td>
+</tr>
+<tr>
+<td><code>google-api-core</code></td>
+<td>2.30.0</td>
+</tr>
+<tr>
+<td><code>google-api-python-client</code></td>
+<td>2.190.0</td>
+</tr>
+<tr>
+<td><code>google-auth-httplib2</code></td>
+<td>0.3.0</td>
+</tr>
+<tr>
+<td><code>google-auth-oauthlib</code></td>
+<td>1.2.4</td>
+</tr>
+<tr>
+<td><code>google-auth</code></td>
+<td>2.48.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-aiplatform</code></td>
+<td>1.138.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-alloydb</code></td>
+<td>0.7.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-appengine-logging</code></td>
+<td>1.8.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-audit-log</code></td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-automl</code></td>
+<td>2.18.1</td>
+</tr>
+<tr>
+<td><code>google-cloud-batch</code></td>
+<td>0.20.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-bigquery-datatransfer</code></td>
+<td>3.21.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-bigquery-storage</code></td>
+<td>2.36.2</td>
+</tr>
+<tr>
+<td><code>google-cloud-bigquery</code></td>
+<td>3.40.1</td>
+</tr>
+<tr>
+<td><code>google-cloud-bigtable</code></td>
+<td>2.35.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-build</code></td>
+<td>3.35.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-compute</code></td>
+<td>1.43.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-container</code></td>
+<td>2.63.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-core</code></td>
+<td>2.5.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-datacatalog</code></td>
+<td>3.29.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-dataflow-client</code></td>
+<td>0.11.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-dataform</code></td>
+<td>0.9.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-dataplex</code></td>
+<td>2.16.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-dataproc-metastore</code></td>
+<td>1.21.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-dataproc</code></td>
+<td>5.25.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-dlp</code></td>
+<td>3.34.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-kms</code></td>
+<td>3.11.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-language</code></td>
+<td>2.19.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-logging</code></td>
+<td>3.13.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-managedkafka</code></td>
+<td>0.3.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-memcache</code></td>
+<td>1.14.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-monitoring</code></td>
+<td>2.29.1</td>
+</tr>
+<tr>
+<td><code>google-cloud-orchestration-airflow</code></td>
+<td>1.19.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-os-login</code></td>
+<td>2.19.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-pubsub</code></td>
+<td>2.35.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-redis</code></td>
+<td>2.20.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-resource-manager</code></td>
+<td>1.16.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-run</code></td>
+<td>0.15.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-secret-manager</code></td>
+<td>2.26.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-spanner</code></td>
+<td>3.63.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-speech</code></td>
+<td>2.36.1</td>
+</tr>
+<tr>
+<td><code>google-cloud-storage-control</code></td>
+<td>1.10.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-storage-transfer</code></td>
+<td>1.19.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-storage</code></td>
+<td>3.1.1</td>
+</tr>
+<tr>
+<td><code>google-cloud-tasks</code></td>
+<td>2.21.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-texttospeech</code></td>
+<td>2.34.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-translate</code></td>
+<td>3.24.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-videointelligence</code></td>
+<td>2.18.0</td>
+</tr>
+<tr>
+<td><code>google-cloud-vision</code></td>
+<td>3.12.1</td>
+</tr>
+<tr>
+<td><code>google-cloud-workflows</code></td>
+<td>1.20.0</td>
+</tr>
+<tr>
+<td><code>google-crc32c</code></td>
+<td>1.8.0</td>
+</tr>
+<tr>
+<td><code>google-genai</code></td>
+<td>1.64.0</td>
+</tr>
+<tr>
+<td><code>google-resumable-media</code></td>
+<td>2.8.0</td>
+</tr>
+<tr>
+<td><code>googleapis-common-protos</code></td>
+<td>1.72.0</td>
+</tr>
+<tr>
+<td><code>greenback</code></td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td><code>greenlet</code></td>
+<td>3.3.2</td>
+</tr>
+<tr>
+<td><code>grpc-google-iam-v1</code></td>
+<td>0.14.3</td>
+</tr>
+<tr>
+<td><code>grpc-interceptor</code></td>
+<td>0.15.4</td>
+</tr>
+<tr>
+<td><code>grpcio-gcp</code></td>
+<td>0.2.2</td>
+</tr>
+<tr>
+<td><code>grpcio-status</code></td>
+<td>1.78.1</td>
+</tr>
+<tr>
+<td><code>grpcio</code></td>
+<td>1.78.1</td>
+</tr>
+<tr>
+<td><code>h11</code></td>
+<td>0.16.0</td>
+</tr>
+<tr>
+<td><code>h2</code></td>
+<td>4.3.0</td>
+</tr>
+<tr>
+<td><code>hf-xet</code></td>
+<td>1.2.0</td>
+</tr>
+<tr>
+<td><code>hpack</code></td>
+<td>4.1.0</td>
+</tr>
+<tr>
+<td><code>httpcore</code></td>
+<td>1.0.9</td>
+</tr>
+<tr>
+<td><code>httplib2</code></td>
+<td>0.31.2</td>
+</tr>
+<tr>
+<td><code>httptools</code></td>
+<td>0.7.1</td>
+</tr>
+<tr>
+<td><code>httpx</code></td>
+<td>0.28.1</td>
+</tr>
+<tr>
+<td><code>huggingface-hub</code></td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td><code>humanize</code></td>
+<td>4.15.0</td>
+</tr>
+<tr>
+<td><code>hyperframe</code></td>
+<td>6.1.0</td>
+</tr>
+<tr>
+<td><code>idna</code></td>
+<td>3.11</td>
+</tr>
+<tr>
+<td><code>ijson</code></td>
+<td>3.4.0.post0</td>
+</tr>
+<tr>
+<td><code>immutabledict</code></td>
+<td>4.3.1</td>
+</tr>
+<tr>
+<td><code>importlib-metadata</code></td>
+<td>8.7.1</td>
+</tr>
+<tr>
+<td><code>inflection</code></td>
+<td>0.5.1</td>
+</tr>
+<tr>
+<td><code>isodate</code></td>
+<td>0.7.2</td>
+</tr>
+<tr>
+<td><code>itsdangerous</code></td>
+<td>2.2.0</td>
+</tr>
+<tr>
+<td><code>jaraco-classes</code></td>
+<td>3.4.0</td>
+</tr>
+<tr>
+<td><code>jaraco-context</code></td>
+<td>6.1.0</td>
+</tr>
+<tr>
+<td><code>jaraco-functools</code></td>
+<td>4.4.0</td>
+</tr>
+<tr>
+<td><code>jinja2</code></td>
+<td>3.1.6</td>
+</tr>
+<tr>
+<td><code>jiter</code></td>
+<td>0.13.0</td>
+</tr>
+<tr>
+<td><code>jmespath</code></td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td><code>joblib</code></td>
+<td>1.5.3</td>
+</tr>
+<tr>
+<td><code>jsonpath-ng</code></td>
+<td>1.7.0</td>
+</tr>
+<tr>
+<td><code>jsonschema-specifications</code></td>
+<td>2025.9.1</td>
+</tr>
+<tr>
+<td><code>jsonschema</code></td>
+<td>4.26.0</td>
+</tr>
+<tr>
+<td><code>jupyter-core</code></td>
+<td>5.9.1</td>
+</tr>
+<tr>
+<td><code>keyring</code></td>
+<td>25.7.0</td>
+</tr>
+<tr>
+<td><code>lazy-object-proxy</code></td>
+<td>1.12.0</td>
+</tr>
+<tr>
+<td><code>leather</code></td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td><code>libcst</code></td>
+<td>1.8.6</td>
+</tr>
+<tr>
+<td><code>linkify-it-py</code></td>
+<td>2.0.3</td>
+</tr>
+<tr>
+<td><code>litellm</code></td>
+<td>1.81.13</td>
+</tr>
+<tr>
+<td><code>lockfile</code></td>
+<td>0.12.2</td>
+</tr>
+<tr>
+<td><code>looker-sdk</code></td>
+<td>26.2.0</td>
+</tr>
+<tr>
+<td><code>lxml</code></td>
+<td>5.4.0</td>
+</tr>
+<tr>
+<td><code>lz4</code></td>
+<td>4.4.5</td>
+</tr>
+<tr>
+<td><code>mako</code></td>
+<td>1.3.10</td>
+</tr>
+<tr>
+<td><code>markdown-it-py</code></td>
+<td>4.0.0</td>
+</tr>
+<tr>
+<td><code>markupsafe</code></td>
+<td>3.0.3</td>
+</tr>
+<tr>
+<td><code>marshmallow</code></td>
+<td>4.2.2</td>
+</tr>
+<tr>
+<td><code>mashumaro</code></td>
+<td>3.14</td>
+</tr>
+<tr>
+<td><code>mdurl</code></td>
+<td>0.1.2</td>
+</tr>
+<tr>
+<td><code>methodtools</code></td>
+<td>0.4.7</td>
+</tr>
+<tr>
+<td><code>microsoft-kiota-abstractions</code></td>
+<td>1.9.8</td>
+</tr>
+<tr>
+<td><code>microsoft-kiota-authentication-azure</code></td>
+<td>1.9.8</td>
+</tr>
+<tr>
+<td><code>microsoft-kiota-http</code></td>
+<td>1.9.8</td>
+</tr>
+<tr>
+<td><code>microsoft-kiota-serialization-json</code></td>
+<td>1.9.8</td>
+</tr>
+<tr>
+<td><code>microsoft-kiota-serialization-text</code></td>
+<td>1.9.8</td>
+</tr>
+<tr>
+<td><code>mmh3</code></td>
+<td>4.1.0</td>
+</tr>
+<tr>
+<td><code>more-itertools</code></td>
+<td>10.8.0</td>
+</tr>
+<tr>
+<td><code>msal-extensions</code></td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td><code>msal</code></td>
+<td>1.34.0</td>
+</tr>
+<tr>
+<td><code>msgpack</code></td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><code>msgraph-core</code></td>
+<td>1.3.8</td>
+</tr>
+<tr>
+<td><code>msgraphfs</code></td>
+<td>0.4</td>
+</tr>
+<tr>
+<td><code>msgspec</code></td>
+<td>0.20.0</td>
+</tr>
+<tr>
+<td><code>msrest</code></td>
+<td>0.7.1</td>
+</tr>
+<tr>
+<td><code>msrestazure</code></td>
+<td>0.6.4.post1</td>
+</tr>
+<tr>
+<td><code>multidict</code></td>
+<td>6.7.1</td>
+</tr>
+<tr>
+<td><code>mypy-boto3-athena</code></td>
+<td>1.42.43</td>
+</tr>
+<tr>
+<td><code>mypy-boto3-glue</code></td>
+<td>1.42.43</td>
+</tr>
+<tr>
+<td><code>mypy-boto3-lakeformation</code></td>
+<td>1.42.45</td>
+</tr>
+<tr>
+<td><code>mypy-boto3-sts</code></td>
+<td>1.42.3</td>
+</tr>
+<tr>
+<td><code>natsort</code></td>
+<td>8.4.0</td>
+</tr>
+<tr>
+<td><code>nbformat</code></td>
+<td>5.10.4</td>
+</tr>
+<tr>
+<td><code>networkx</code></td>
+<td>3.6.1</td>
+</tr>
+<tr>
+<td><code>numpy</code></td>
+<td>2.2.6</td>
+</tr>
+<tr>
+<td><code>oauthlib</code></td>
+<td>3.3.1</td>
+</tr>
+<tr>
+<td><code>openai</code></td>
+<td>2.21.0</td>
+</tr>
+<tr>
+<td><code>opencensus-context</code></td>
+<td>0.1.3</td>
+</tr>
+<tr>
+<td><code>opencensus</code></td>
+<td>0.11.4</td>
+</tr>
+<tr>
+<td><code>openlineage-integration-common</code></td>
+<td>1.44.1</td>
+</tr>
+<tr>
+<td><code>openlineage-python</code></td>
+<td>1.44.1</td>
+</tr>
+<tr>
+<td><code>openlineage-sql</code></td>
+<td>1.44.1</td>
+</tr>
+<tr>
+<td><code>openpyxl</code></td>
+<td>3.1.5</td>
+</tr>
+<tr>
+<td><code>opentelemetry-api</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-exporter-otlp-proto-common</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-exporter-otlp-proto-grpc</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-exporter-otlp-proto-http</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-exporter-otlp</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-exporter-prometheus</code></td>
+<td>0.60b1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-proto</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-resourcedetector-gcp</code></td>
+<td>1.11.0a0</td>
+</tr>
+<tr>
+<td><code>opentelemetry-sdk</code></td>
+<td>1.39.1</td>
+</tr>
+<tr>
+<td><code>opentelemetry-semantic-conventions</code></td>
+<td>0.60b1</td>
+</tr>
+<tr>
+<td><code>oracledb</code></td>
+<td>3.4.1</td>
+</tr>
+<tr>
+<td><code>orderly-set</code></td>
+<td>5.5.0</td>
+</tr>
+<tr>
+<td><code>orjson</code></td>
+<td>3.11.7</td>
+</tr>
+<tr>
+<td><code>outcome</code></td>
+<td>1.3.0.post0</td>
+</tr>
+<tr>
+<td><code>packaging</code></td>
+<td>26.0</td>
+</tr>
+<tr>
+<td><code>pandas-gbq</code></td>
+<td>0.33.0</td>
+</tr>
+<tr>
+<td><code>pandas</code></td>
+<td>2.3.3</td>
+</tr>
+<tr>
+<td><code>paramiko</code></td>
+<td>3.5.1</td>
+</tr>
+<tr>
+<td><code>parsedatetime</code></td>
+<td>2.6</td>
+</tr>
+<tr>
+<td><code>pathspec</code></td>
+<td>0.12.1</td>
+</tr>
+<tr>
+<td><code>pathvalidate</code></td>
+<td>3.3.1</td>
+</tr>
+<tr>
+<td><code>pendulum</code></td>
+<td>3.2.0</td>
+</tr>
+<tr>
+<td><code>platformdirs</code></td>
+<td>4.9.2</td>
+</tr>
+<tr>
+<td><code>pluggy</code></td>
+<td>1.6.0</td>
+</tr>
+<tr>
+<td><code>ply</code></td>
+<td>3.11</td>
+</tr>
+<tr>
+<td><code>prometheus-client</code></td>
+<td>0.24.1</td>
+</tr>
+<tr>
+<td><code>propcache</code></td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td><code>proto-plus</code></td>
+<td>1.27.1</td>
+</tr>
+<tr>
+<td><code>protobuf</code></td>
+<td>6.33.5</td>
+</tr>
+<tr>
+<td><code>psutil</code></td>
+<td>7.2.2</td>
+</tr>
+<tr>
+<td><code>psycopg2-binary</code></td>
+<td>2.9.11</td>
+</tr>
+<tr>
+<td><code>py-spy</code></td>
+<td>0.4.1</td>
+</tr>
+<tr>
+<td><code>pyarrow</code></td>
+<td>22.0.0</td>
+</tr>
+<tr>
+<td><code>pyasn1-modules</code></td>
+<td>0.4.2</td>
+</tr>
+<tr>
+<td><code>pyasn1</code></td>
+<td>0.6.2</td>
+</tr>
+<tr>
+<td><code>pyathena</code></td>
+<td>3.29.0</td>
+</tr>
+<tr>
+<td><code>pybreaker</code></td>
+<td>1.4.1</td>
+</tr>
+<tr>
+<td><code>pycparser</code></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td><code>pycryptodome</code></td>
+<td>3.23.0</td>
+</tr>
+<tr>
+<td><code>pydantic-core</code></td>
+<td>2.41.5</td>
+</tr>
+<tr>
+<td><code>pydantic</code></td>
+<td>2.12.5</td>
+</tr>
+<tr>
+<td><code>pydata-google-auth</code></td>
+<td>1.9.1</td>
+</tr>
+<tr>
+<td><code>pydynamodb</code></td>
+<td>0.8.1</td>
+</tr>
+<tr>
+<td><code>pyexasol</code></td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td><code>pygithub</code></td>
+<td>2.8.1</td>
+</tr>
+<tr>
+<td><code>pygments</code></td>
+<td>2.19.2</td>
+</tr>
+<tr>
+<td><code>pygtrie</code></td>
+<td>2.5.0</td>
+</tr>
+<tr>
+<td><code>pyiceberg</code></td>
+<td>0.11.0</td>
+</tr>
+<tr>
+<td><code>pyjwt</code></td>
+<td>2.11.0</td>
+</tr>
+<tr>
+<td><code>pymssql</code></td>
+<td>2.3.13</td>
+</tr>
+<tr>
+<td><code>pymysql</code></td>
+<td>1.1.2</td>
+</tr>
+<tr>
+<td><code>pynacl</code></td>
+<td>1.6.2</td>
+</tr>
+<tr>
+<td><code>pyodbc</code></td>
+<td>5.3.0</td>
+</tr>
+<tr>
+<td><code>pyopenssl</code></td>
+<td>25.3.0</td>
+</tr>
+<tr>
+<td><code>pyparsing</code></td>
+<td>3.3.2</td>
+</tr>
+<tr>
+<td><code>pyroaring</code></td>
+<td>1.0.3</td>
+</tr>
+<tr>
+<td><code>python-daemon</code></td>
+<td>3.1.2</td>
+</tr>
+<tr>
+<td><code>python-dateutil</code></td>
+<td>2.9.0.post0</td>
+</tr>
+<tr>
+<td><code>python-dotenv</code></td>
+<td>1.2.1</td>
+</tr>
+<tr>
+<td><code>python-multipart</code></td>
+<td>0.0.22</td>
+</tr>
+<tr>
+<td><code>python-slugify</code></td>
+<td>8.0.4</td>
+</tr>
+<tr>
+<td><code>pytimeparse</code></td>
+<td>1.1.8</td>
+</tr>
+<tr>
+<td><code>pytz</code></td>
+<td>2025.2</td>
+</tr>
+<tr>
+<td><code>pyyaml</code></td>
+<td>6.0.3</td>
+</tr>
+<tr>
+<td><code>ray</code></td>
+<td>2.54.0</td>
+</tr>
+<tr>
+<td><code>redshift-connector</code></td>
+<td>2.1.11</td>
+</tr>
+<tr>
+<td><code>referencing</code></td>
+<td>0.37.0</td>
+</tr>
+<tr>
+<td><code>regex</code></td>
+<td>2026.2.19</td>
+</tr>
+<tr>
+<td><code>requests-oauthlib</code></td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td><code>requests-toolbelt</code></td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td><code>requests</code></td>
+<td>2.32.5</td>
+</tr>
+<tr>
+<td><code>requirements-parser</code></td>
+<td>0.13.0</td>
+</tr>
+<tr>
+<td><code>rich-argparse</code></td>
+<td>1.7.2</td>
+</tr>
+<tr>
+<td><code>rich-toolkit</code></td>
+<td>0.19.4</td>
+</tr>
+<tr>
+<td><code>rich</code></td>
+<td>14.3.3</td>
+</tr>
+<tr>
+<td><code>rpds-py</code></td>
+<td>0.30.0</td>
+</tr>
+<tr>
+<td><code>rsa</code></td>
+<td>4.9.1</td>
+</tr>
+<tr>
+<td><code>ruamel-yaml</code></td>
+<td>0.19.1</td>
+</tr>
+<tr>
+<td><code>s3transfer</code></td>
+<td>0.16.0</td>
+</tr>
+<tr>
+<td><code>sagemaker-studio</code></td>
+<td>1.1.6</td>
+</tr>
+<tr>
+<td><code>scikit-learn</code></td>
+<td>1.8.0</td>
+</tr>
+<tr>
+<td><code>scipy</code></td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td><code>scramp</code></td>
+<td>1.4.8</td>
+</tr>
+<tr>
+<td><code>semver</code></td>
+<td>3.0.4</td>
+</tr>
+<tr>
+<td><code>setproctitle</code></td>
+<td>1.3.7</td>
+</tr>
+<tr>
+<td><code>setuptools</code></td>
+<td>82.0.0</td>
+</tr>
+<tr>
+<td><code>shellingham</code></td>
+<td>1.5.4</td>
+</tr>
+<tr>
+<td><code>simplejson</code></td>
+<td>3.20.2</td>
+</tr>
+<tr>
+<td><code>six</code></td>
+<td>1.17.0</td>
+</tr>
+<tr>
+<td><code>smart-open</code></td>
+<td>7.5.0</td>
+</tr>
+<tr>
+<td><code>smmap</code></td>
+<td>5.0.2</td>
+</tr>
+<tr>
+<td><code>sniffio</code></td>
+<td>1.3.1</td>
+</tr>
+<tr>
+<td><code>snowflake-connector-python</code></td>
+<td>4.3.0</td>
+</tr>
+<tr>
+<td><code>snowflake-snowpark-python</code></td>
+<td>1.45.0</td>
+</tr>
+<tr>
+<td><code>snowflake-sqlalchemy</code></td>
+<td>1.8.2</td>
+</tr>
+<tr>
+<td><code>snowplow-tracker</code></td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td><code>sortedcontainers</code></td>
+<td>2.4.0</td>
+</tr>
+<tr>
+<td><code>soupsieve</code></td>
+<td>2.8.3</td>
+</tr>
+<tr>
+<td><code>sqlalchemy-bigquery</code></td>
+<td>1.16.0</td>
+</tr>
+<tr>
+<td><code>sqlalchemy-jsonfield</code></td>
+<td>1.0.2</td>
+</tr>
+<tr>
+<td><code>sqlalchemy-spanner</code></td>
+<td>1.17.2</td>
+</tr>
+<tr>
+<td><code>sqlalchemy-utils</code></td>
+<td>0.42.1</td>
+</tr>
+<tr>
+<td><code>sqlalchemy</code></td>
+<td>2.0.46</td>
+</tr>
+<tr>
+<td><code>sqlglot</code></td>
+<td>28.10.1</td>
+</tr>
+<tr>
+<td><code>sqlparams</code></td>
+<td>6.2.0</td>
+</tr>
+<tr>
+<td><code>sqlparse</code></td>
+<td>0.5.4</td>
+</tr>
+<tr>
+<td><code>sshtunnel</code></td>
+<td>0.4.0</td>
+</tr>
+<tr>
+<td><code>starlette</code></td>
+<td>0.48.0</td>
+</tr>
+<tr>
+<td><code>std-uritemplate</code></td>
+<td>2.0.8</td>
+</tr>
+<tr>
+<td><code>strictyaml</code></td>
+<td>1.7.3</td>
+</tr>
+<tr>
+<td><code>structlog</code></td>
+<td>25.5.0</td>
+</tr>
+<tr>
+<td><code>svcs</code></td>
+<td>25.1.0</td>
+</tr>
+<tr>
+<td><code>tabulate</code></td>
+<td>0.9.0</td>
+</tr>
+<tr>
+<td><code>tenacity</code></td>
+<td>9.1.4</td>
+</tr>
+<tr>
+<td><code>teradatasql</code></td>
+<td>20.0.0.52</td>
+</tr>
+<tr>
+<td><code>termcolor</code></td>
+<td>3.3.0</td>
+</tr>
+<tr>
+<td><code>text-unidecode</code></td>
+<td>1.3</td>
+</tr>
+<tr>
+<td><code>threadpoolctl</code></td>
+<td>3.6.0</td>
+</tr>
+<tr>
+<td><code>thrift</code></td>
+<td>0.20.0</td>
+</tr>
+<tr>
+<td><code>tiktoken</code></td>
+<td>0.12.0</td>
+</tr>
+<tr>
+<td><code>tokenizers</code></td>
+<td>0.22.2</td>
+</tr>
+<tr>
+<td><code>tomlkit</code></td>
+<td>0.14.0</td>
+</tr>
+<tr>
+<td><code>tqdm</code></td>
+<td>4.67.3</td>
+</tr>
+<tr>
+<td><code>traitlets</code></td>
+<td>5.14.3</td>
+</tr>
+<tr>
+<td><code>typer-slim</code></td>
+<td>0.24.0</td>
+</tr>
+<tr>
+<td><code>typer</code></td>
+<td>0.24.0</td>
+</tr>
+<tr>
+<td><code>types-awscrt</code></td>
+<td>0.31.2</td>
+</tr>
+<tr>
+<td><code>types-protobuf</code></td>
+<td>6.32.1.20260221</td>
+</tr>
+<tr>
+<td><code>types-s3transfer</code></td>
+<td>0.16.0</td>
+</tr>
+<tr>
+<td><code>typing-extensions</code></td>
+<td>4.15.0</td>
+</tr>
+<tr>
+<td><code>typing-inspection</code></td>
+<td>0.4.2</td>
+</tr>
+<tr>
+<td><code>tzdata</code></td>
+<td>2025.3</td>
+</tr>
+<tr>
+<td><code>tzlocal</code></td>
+<td>5.3.1</td>
+</tr>
+<tr>
+<td><code>uc-micro-py</code></td>
+<td>1.0.3</td>
+</tr>
+<tr>
+<td><code>universal-pathlib</code></td>
+<td>0.2.6</td>
+</tr>
+<tr>
+<td><code>uritemplate</code></td>
+<td>4.2.0</td>
+</tr>
+<tr>
+<td><code>urllib3</code></td>
+<td>2.6.3</td>
+</tr>
+<tr>
+<td><code>uuid6</code></td>
+<td>2025.0.1</td>
+</tr>
+<tr>
+<td><code>uvicorn</code></td>
+<td>0.41.0</td>
+</tr>
+<tr>
+<td><code>uvloop</code></td>
+<td>0.22.1</td>
+</tr>
+<tr>
+<td><code>vertica-python</code></td>
+<td>1.4.0</td>
+</tr>
+<tr>
+<td><code>virtualenv</code></td>
+<td>20.38.0</td>
+</tr>
+<tr>
+<td><code>watchfiles</code></td>
+<td>1.1.1</td>
+</tr>
+<tr>
+<td><code>watchtower</code></td>
+<td>3.4.0</td>
+</tr>
+<tr>
+<td><code>websocket-client</code></td>
+<td>1.8.0</td>
+</tr>
+<tr>
+<td><code>websockets</code></td>
+<td>15.0.1</td>
+</tr>
+<tr>
+<td><code>wheel</code></td>
+<td>0.46.3</td>
+</tr>
+<tr>
+<td><code>wirerope</code></td>
+<td>1.0.0</td>
+</tr>
+<tr>
+<td><code>wrapt</code></td>
+<td>2.1.1</td>
+</tr>
+<tr>
+<td><code>yarl</code></td>
+<td>1.22.0</td>
+</tr>
+<tr>
+<td><code>zipp</code></td>
+<td>3.23.0</td>
+</tr>
+<tr>
+<td><code>zstandard</code></td>
+<td>0.25.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="forwarded-ports">Forwarded Ports<a class="headerlink" href="#forwarded-ports" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>8080</code></td>
+<td>Airflow UI &amp; API</td>
+</tr>
+<tr>
+<td><code>5555</code></td>
+<td>Flower (Celery monitoring)</td>
+</tr>
+<tr>
+<td><code>8000</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vs-code-extensions">VS Code Extensions<a class="headerlink" href="#vs-code-extensions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Extension ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ms-python.python</code></td>
+</tr>
+<tr>
+<td><code>ms-python.vscode-pylance</code></td>
+</tr>
+<tr>
+<td><code>mechatroner.rainbow-csv</code></td>
+</tr>
+<tr>
+<td><code>adamviola.parquet-explorer</code></td>
+</tr>
+<tr>
+<td><code>charliermarsh.ruff</code></td>
+</tr>
+<tr>
+<td><code>redhat.vscode-yaml</code></td>
+</tr>
+<tr>
+<td><code>mtxr.sqltools</code></td>
+</tr>
+<tr>
+<td><code>koszti.snowflake-driver-for-sqltools</code></td>
+</tr>
+<tr>
+<td><code>snowflake.snowflake-vsc</code></td>
+</tr>
+<tr>
+<td><code>ms-mssql.mssql</code></td>
+</tr>
+<tr>
+<td><code>sqlfluff.vscode-sqlfluff</code></td>
+</tr>
+<tr>
+<td><code>necatiarslan.airflow-vscode-extension</code></td>
+</tr>
+<tr>
+<td><code>aaron-bond.better-comments</code></td>
+</tr>
+<tr>
+<td><code>streetsidesoftware.code-spell-checker</code></td>
+</tr>
+<tr>
+<td><code>tamasfe.even-better-toml</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 14H9V6h11Z"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m-5 14H4V6h11Z"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e3ad5d0a.min.js"></script>
+      
+        <script src="../src/assets/theme.js"></script>
+      
+        <script src="../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../assets/document_dates/core/md5.min.js"></script>
+      
+        <script src="../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../assets/document_dates/user.config.js"></script>
+      
+        <script src="../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>
