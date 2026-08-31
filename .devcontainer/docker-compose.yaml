@@ -65,7 +65,6 @@ x-airflow-common:
     AIRFLOW__CORE__TEST_CONNECTION: "Enabled"
 
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
-    AIRFLOW__API__RATELIMIT_STORAGE_URI: redis://redis:6379/0
     AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL: 10
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
@@ -82,8 +81,6 @@ x-airflow-common:
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
-    redis:
-      condition: service_healthy
     postgres:
       condition: service_healthy
 
@@ -101,19 +98,6 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
-
-  redis:
-    # Redis is limited to 7.2-bookworm due to licencing change
-    # https://redis.io/blog/redis-adopts-dual-source-available-licensing/
-    image: redis:7.2-bookworm
-    expose:
-      - 6379
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 30s
-      retries: 50
-      start_period: 30s
 
   airflow-apiserver:
     <<: *airflow-common
