@@ -272,6 +272,7 @@ These tools are installed globally via `uv tool install`:
 | `immutabledict` | 4.3.1 |
 | `importlib-metadata` | 8.9.0 |
 | `inflection` | 0.5.1 |
+| `iniconfig` | 2.3.0 |
 | `isodate` | 0.7.2 |
 | `isoduration` | 20.11.0 |
 | `itsdangerous` | 2.2.0 |
@@ -378,6 +379,7 @@ These tools are installed globally via `uv tool install`:
 | `pyogrio` | 0.13.0 |
 | `pyopenssl` | 26.4.0 |
 | `pyparsing` | 3.3.2 |
+| `pytest` | 9.1.1 |
 | `python-daemon` | 3.1.2 |
 | `python-dateutil` | 2.9.0.post0 |
 | `python-discovery` | 1.5.2 |

@@ -39,5 +39,6 @@ hooks = [
 repo = "local"
 hooks = [
     { id = "generate-dag-docs", name = "Generate DAG Docs", entry = "python docs/scripts/generate_dag_docs.py", language = "system", pass_filenames = false, files = "^dags/", stages = ["pre-commit"]},
-    { id = "generate-devcontainer-docs", name = "Generate Dev Container Docs", entry = "python docs/scripts/generate_devcontainer_docs.py", language = "system", pass_filenames = false, files = "^\\.devcontainer/", stages = ["pre-commit"]}
+    { id = "generate-devcontainer-docs", name = "Generate Dev Container Docs", entry = "python docs/scripts/generate_devcontainer_docs.py", language = "system", pass_filenames = false, files = "^\\.devcontainer/", stages = ["pre-commit"]},
+    { id = "airflow-import-check", name = "Airflow import checks", entry = "pytest tests/test_airflow_imports.py", language = "system", pass_filenames = false, stages = ["pre-push"] }
 ]
