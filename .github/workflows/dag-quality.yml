@@ -1,0 +1,45 @@
+name: DAG quality checks
+
+on:
+  pull_request:
+    paths:
+      - 'dags/**'
+      - 'include/**'
+
+permissions:
+  contents: read
+
+jobs:
+  dag-quality:
+    runs-on: ubuntu-latest
+    env:
+      AIRFLOW_HOME: ${{ github.workspace }}
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      PYTHONUTF8: '1'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: '0.11.7'
+          enable-cache: true
+
+      - name: Create uv environment and install Airflow + tooling
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python \
+            "apache-airflow[postgres]==3.3.1" \
+            "pytest>=8.0" \
+            "ruff>=0.8.0"
+
+      - name: Ruff lint check
+        run: uv run --python .venv/bin/python ruff check dags include
+
+      - name: Ruff format check
+        run: uv run --python .venv/bin/python ruff format --check dags include
+
+      - name: DAG import smoke test
+        run: uv run --python .venv/bin/python pytest tests/test_airflow_imports.py -q
