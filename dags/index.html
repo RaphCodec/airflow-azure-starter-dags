@@ -416,6 +416,29 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
+  <a href="#creating-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating DAGs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example DAGs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example DAGs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#no-team" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -423,6 +446,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -488,6 +516,29 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
+  <a href="#creating-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating DAGs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example DAGs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example DAGs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#no-team" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -495,6 +546,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -517,8 +573,19 @@
 
 
 <h1 id="dags">DAGs<a class="headerlink" href="#dags" title="Permanent link">&para;</a></h1>
+<h2 id="creating-dags">Creating DAGs<a class="headerlink" href="#creating-dags" title="Permanent link">&para;</a></h2>
+<p>Use the <strong><a href="generator/">DAG Generator</a></strong> to create standardized Airflow DAGs with domain-based naming conventions.</p>
+<p>The generator supports three DAG types:
+- <strong>Ingestion</strong> — Extract and load data using dlt
+- <strong>Processing</strong> — Transform and enrich data
+- <strong>Orchestration</strong> — Coordinate other DAGs</p>
+<p>Quick start:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>scripts/create_dag.py<span class="w"> </span>--domain<span class="w"> </span>sales<span class="w"> </span>--name<span class="w"> </span>orders<span class="w"> </span>--type<span class="w"> </span>ingestion<span class="w"> </span>--schedule<span class="w"> </span><span class="s2">&quot;@daily&quot;</span>
+</span></code></pre></div></p>
+<p>See the <a href="generator/">DAG Generator documentation</a> for full details.</p>
+<h2 id="example-dags">Example DAGs<a class="headerlink" href="#example-dags" title="Permanent link">&para;</a></h2>
 <p>Generated: 2026-07-14</p>
-<h2 id="no-team">No Team<a class="headerlink" href="#no-team" title="Permanent link">&para;</a></h2>
+<h3 id="no-team">No Team<a class="headerlink" href="#no-team" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="duckdb_example/">duckdb_example</a></li>
 <li><a href="hello_github/">Hello GitHub</a></li>

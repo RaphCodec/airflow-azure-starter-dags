@@ -399,6 +399,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating DAGs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating DAGs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dag-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DAG Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn More
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -498,6 +548,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-dags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating DAGs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating DAGs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dag-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DAG Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learn More
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -517,7 +617,7 @@
 
 
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-04-25'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-25T20:22:31-04:00'>2026-04-25</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-04-26'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-04-26T00:22:31+00:00'>2026-04-26</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='RaphCodec' data-tippy-content data-tippy-raw='<a href="mailto:46251144+RaphCodec@users.noreply.github.com">RaphCodec</a>'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='46251144+RaphCodec@users.noreply.github.com' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-04-25'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-04-25T20:22:31-04:00'>2026-04-25</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-08-31'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-08-31T11:01:12+00:00'>2026-08-31</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='RaphCodec' data-tippy-content data-tippy-raw='<a href="mailto:46251144+RaphCodec@users.noreply.github.com">RaphCodec</a>'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='46251144+RaphCodec@users.noreply.github.com' /></div></div></div></div></div>
 
 <p>Follow these steps to set up the repository and start developing with a devcontainer.</p>
 <h2 id="developing-with-a-dev-container-recommended">Developing with a Dev Container (recommended)<a class="headerlink" href="#developing-with-a-dev-container-recommended" title="Permanent link">&para;</a></h2>
@@ -556,6 +656,33 @@
 <ul>
 <li>Make sure Docker is running before reopening in the container; devcontainers require the Docker daemon.</li>
 </ul>
+<h2 id="creating-dags">Creating DAGs<a class="headerlink" href="#creating-dags" title="Permanent link">&para;</a></h2>
+<p>Use the <strong>DAG Generator</strong> to create standardized Airflow DAGs with domain-based naming conventions.</p>
+<h3 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h3>
+<p>Generate an ingestion DAG for sales orders:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>/opt/airflow
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>scripts/create_dag.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--domain<span class="w"> </span>sales<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--name<span class="w"> </span>orders<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--type<span class="w"> </span>ingestion<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--schedule<span class="w"> </span><span class="s2">&quot;@daily&quot;</span>
+</span></code></pre></div>
+<p>This creates:
+- <code>dags/sales_orders_ingestion.py</code> — Main DAG file
+- <code>include/sales/ingestion/pipeline.py</code> — dlt pipeline code
+- <code>include/sales/ingestion/sources.py</code> — dlt source definitions</p>
+<h3 id="dag-types">DAG Types<a class="headerlink" href="#dag-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ingestion</strong> — Extract and load data using dlt (data load tool)</li>
+<li><strong>Processing</strong> — Transform and enrich data with Airflow TaskFlow API</li>
+<li><strong>Orchestration</strong> — Coordinate other DAGs without business logic</li>
+</ul>
+<h3 id="learn-more">Learn More<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h3>
+<p>See the <a href="../dags/generator.md">DAG Generator documentation</a> for:
+- Naming conventions
+- Detailed examples for each DAG type
+- Configuration and secrets management
+- Complete command reference</p>
 
 
 

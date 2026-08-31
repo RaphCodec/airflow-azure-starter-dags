@@ -7,12 +7,12 @@
     </url>
     <url>
         <loc>https://raphcodec.github.io/airflow-azure-starter-dags/devcontainer/</loc>
-        <lastmod>2026-08-26</lastmod>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://raphcodec.github.io/airflow-azure-starter-dags/getting-started/</loc>
-        <lastmod>2026-04-26</lastmod>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -22,12 +22,17 @@
     </url>
     <url>
         <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/</loc>
-        <lastmod>2026-07-14</lastmod>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/duckdb_example/</loc>
         <lastmod>2026-07-14</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/generator/</loc>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
