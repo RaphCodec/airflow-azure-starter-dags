@@ -39,3 +39,39 @@ The devcontainer will build and start; once it finishes building you can view th
 Notes:
 
 - Make sure Docker is running before reopening in the container; devcontainers require the Docker daemon.
+
+## Creating DAGs
+
+Use the **DAG Generator** to create standardized Airflow DAGs with domain-based naming conventions.
+
+### Quick Start
+
+Generate an ingestion DAG for sales orders:
+
+```bash
+cd /opt/airflow
+python scripts/create_dag.py \
+  --domain sales \
+  --name orders \
+  --type ingestion \
+  --schedule "@daily"
+```
+
+This creates:
+- `dags/sales_orders_ingestion.py` — Main DAG file
+- `include/sales/ingestion/pipeline.py` — dlt pipeline code
+- `include/sales/ingestion/sources.py` — dlt source definitions
+
+### DAG Types
+
+- **Ingestion** — Extract and load data using dlt (data load tool)
+- **Processing** — Transform and enrich data with Airflow TaskFlow API
+- **Orchestration** — Coordinate other DAGs without business logic
+
+### Learn More
+
+See the [DAG Generator documentation](../dags/generator.md) for:
+- Naming conventions
+- Detailed examples for each DAG type
+- Configuration and secrets management
+- Complete command reference
