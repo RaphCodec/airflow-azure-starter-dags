@@ -66,6 +66,7 @@ apache-airflow==3.3.1
     #   apache-airflow-providers-google
     #   apache-airflow-providers-http
     #   apache-airflow-providers-microsoft-azure
+    #   apache-airflow-providers-microsoft-mssql
     #   apache-airflow-providers-odbc
     #   apache-airflow-providers-openlineage
     #   apache-airflow-providers-postgres
@@ -94,6 +95,7 @@ apache-airflow-providers-common-compat==1.18.0
     #   apache-airflow-providers-google
     #   apache-airflow-providers-http
     #   apache-airflow-providers-microsoft-azure
+    #   apache-airflow-providers-microsoft-mssql
     #   apache-airflow-providers-odbc
     #   apache-airflow-providers-openlineage
     #   apache-airflow-providers-postgres
@@ -108,6 +110,7 @@ apache-airflow-providers-common-sql==2.1.0
     #   apache-airflow-core
     #   apache-airflow-providers-amazon
     #   apache-airflow-providers-google
+    #   apache-airflow-providers-microsoft-mssql
     #   apache-airflow-providers-odbc
     #   apache-airflow-providers-openlineage
     #   apache-airflow-providers-postgres
@@ -119,6 +122,8 @@ apache-airflow-providers-google==22.3.0
 apache-airflow-providers-http==6.0.4
     # via apache-airflow-providers-amazon
 apache-airflow-providers-microsoft-azure==14.1.0
+    # via uv-deps
+apache-airflow-providers-microsoft-mssql==4.7.1
     # via uv-deps
 apache-airflow-providers-odbc==4.12.3
     # via uv-deps
@@ -975,6 +980,7 @@ methodtools==0.4.7
     # via
     #   apache-airflow-core
     #   apache-airflow-providers-common-sql
+    #   apache-airflow-providers-microsoft-mssql
     #   apache-airflow-task-sdk
 metricflow==0.212.0
     # via dbt-core
@@ -1387,6 +1393,8 @@ pyjwt==2.13.0
     #   gcloud-aio-auth
     #   msal
     #   snowflake-connector-python
+pymssql==2.4.0
+    # via apache-airflow-providers-microsoft-mssql
 pyodbc==5.3.0
     # via apache-airflow-providers-odbc
 pyogrio==0.13.0

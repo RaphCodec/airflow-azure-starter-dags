@@ -67,6 +67,7 @@ These tools are installed globally via `uv tool install`:
 | `apache-airflow-providers-google` | 22.3.0 |
 | `apache-airflow-providers-http` | 6.0.4 |
 | `apache-airflow-providers-microsoft-azure` | 14.1.0 |
+| `apache-airflow-providers-microsoft-mssql` | 4.7.1 |
 | `apache-airflow-providers-odbc` | 4.12.3 |
 | `apache-airflow-providers-openlineage` | 2.20.0 |
 | `apache-airflow-providers-postgres` | 7.0.1 |
@@ -375,6 +376,7 @@ These tools are installed globally via `uv tool install`:
 | `pygments` | 2.21.0 |
 | `pygtrie` | 2.5.0 |
 | `pyjwt` | 2.13.0 |
+| `pymssql` | 2.4.0 |
 | `pyodbc` | 5.3.0 |
 | `pyogrio` | 0.13.0 |
 | `pyopenssl` | 26.4.0 |
