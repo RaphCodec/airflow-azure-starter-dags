@@ -1,0 +1,8 @@
+.devcontainer/
+.azure/
+.github/
+logs/
+docs/
+scripts/
+tests/
+include/
