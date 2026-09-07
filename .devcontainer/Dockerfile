@@ -19,4 +19,5 @@ COPY requirements.txt .
 RUN uv pip install apache-airflow==${AIRFLOW_VERSION} -r requirements.txt
 RUN uv tool install prek@latest\
     && uv tool install commitizen@latest\
-    && uv tool install ruff@latest
+    && uv tool install ruff@latest\
+    && uv tool install sqlfluff@latest
