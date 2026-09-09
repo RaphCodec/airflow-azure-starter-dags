@@ -96,7 +96,7 @@ def main(
     # relative imports like `include.common` resolve correctly.
     sys.path.insert(0, os.path.abspath(os.path.join(BASE_DIR, "..", "..")))
     sys.path.insert(0, os.path.abspath(dag_folder))
-    dagbag = DagBag(dag_folder=dag_folder, include_examples=False)
+    dagbag = DagBag(dag_folder=dag_folder)
     if dagbag.import_errors:
         logging.warning("Import errors while parsing DAGs:")
         for k, v in dagbag.import_errors.items():
