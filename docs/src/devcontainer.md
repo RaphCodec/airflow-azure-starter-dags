@@ -59,11 +59,12 @@ These tools are installed globally via `uv tool install`:
 | Package | Version |
 |---|---|
 | `apache-airflow-providers-amazon` | 9.34.0 |
+| `apache-airflow-providers-apache-arrow` | 0.1.0 |
 | `apache-airflow-providers-celery` | 3.23.1 |
 | `apache-airflow-providers-common-compat` | 1.18.0 |
 | `apache-airflow-providers-common-io` | 1.8.0 |
 | `apache-airflow-providers-common-sql` | 2.1.0 |
-| `apache-airflow-providers-git` | 0.4.2 |
+| `apache-airflow-providers-git` | 0.5.0 |
 | `apache-airflow-providers-google` | 22.3.0 |
 | `apache-airflow-providers-http` | 6.0.4 |
 | `apache-airflow-providers-microsoft-azure` | 14.1.0 |
@@ -113,6 +114,7 @@ These tools are installed globally via `uv tool install`:
 |---|---|
 | `a2wsgi` | 1.10.10 |
 | `adal` | 1.2.7 |
+| `adbc-driver-manager` | 1.12.0 |
 | `adlfs` | 2026.8.0 |
 | `aenum` | 3.1.17 |
 | `agate` | 1.9.1 |
@@ -176,7 +178,7 @@ These tools are installed globally via `uv tool install`:
 | `dill` | 0.4.1 |
 | `distlib` | 0.4.3 |
 | `distro` | 1.9.0 |
-| `dlthub` | 0.30.0 |
+| `dlt` | 1.31.0 |
 | `dnspython` | 2.8.0 |
 | `docstring-parser` | 0.18.0 |
 | `duckdb` | 1.5.5 |
@@ -194,6 +196,7 @@ These tools are installed globally via `uv tool install`:
 | `gcsfs` | 2026.8.0 |
 | `gitdb` | 4.0.12 |
 | `gitpython` | 3.1.59 |
+| `giturlparse` | 0.15.0 |
 | `google-ads` | 31.4.0 |
 | `google-analytics-admin` | 0.30.1 |
 | `google-api-core` | 2.34.0 |
@@ -340,6 +343,7 @@ These tools are installed globally via `uv tool install`:
 | `opentelemetry-sdk` | 1.44.0 |
 | `opentelemetry-semantic-conventions` | 0.65b0 |
 | `orderly-set` | 5.5.0 |
+| `orjson` | 3.13.0 ; platform_python_implementation != 'PyPy' and sys_platform != 'emscripten' |
 | `outcome` | 1.3.0.post0 |
 | `packaging` | 26.3 |
 | `pandas-gbq` | 0.35.1 |
@@ -347,6 +351,7 @@ These tools are installed globally via `uv tool install`:
 | `parsedatetime` | 2.6 |
 | `pathlib-abc` | 0.5.2 |
 | `pathspec` | 1.0.4 |
+| `pathvalidate` | 3.3.1 |
 | `pendulum` | 3.2.0 |
 | `platformdirs` | 4.11.3 |
 | `pluggy` | 1.6.0 |
@@ -390,6 +395,7 @@ These tools are installed globally via `uv tool install`:
 | `python-slugify` | 8.0.4 |
 | `pytimeparse` | 1.1.8 |
 | `pytz` | 2026.3.post1 |
+| `pywin32` | 312 ; sys_platform  |
 | `pyyaml` | 6.0.3 |
 | `rapidfuzz` | 3.14.5 |
 | `ray` | 2.57.0 ; python_full_version < '3.15' |
@@ -400,6 +406,7 @@ These tools are installed globally via `uv tool install`:
 | `requests-oauthlib` | 2.0.0 |
 | `requests-toolbelt` | 1.0.0 |
 | `requests` | 2.34.2 |
+| `requirements-parser` | 0.13.1 |
 | `rich-argparse` | 1.8.0 |
 | `rich-toolkit` | 0.20.3 |
 | `rich` | 15.0.0 |
@@ -411,9 +418,11 @@ These tools are installed globally via `uv tool install`:
 | `scikit-learn` | 1.9.0 |
 | `scipy` | 1.18.1 |
 | `scramp` | 1.4.17 |
+| `semver` | 3.1.0 |
 | `setproctitle` | 1.3.7 |
 | `setuptools` | 84.0.0 |
 | `shellingham` | 1.5.4 |
+| `simplejson` | 4.2.0 |
 | `six` | 1.17.0 |
 | `smart-open` | 8.0.1 ; python_full_version < '3.15' |
 | `smmap` | 5.0.3 |
