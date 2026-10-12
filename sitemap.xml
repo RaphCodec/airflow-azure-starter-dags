@@ -7,7 +7,7 @@
     </url>
     <url>
         <loc>https://raphcodec.github.io/airflow-azure-starter-dags/devcontainer/</loc>
-        <lastmod>2026-09-06</lastmod>
+        <lastmod>2026-10-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -22,7 +22,7 @@
     </url>
     <url>
         <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-10-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
@@ -31,13 +31,18 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/generator/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/hello_github/</loc>
+        <lastmod>2026-07-14</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/hello_github/</loc>
-        <lastmod>2026-07-14</lastmod>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/opendata_civil_service_ingestion/</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://raphcodec.github.io/airflow-azure-starter-dags/dags/opendata_civil_service_ingestion_helper/</loc>
+        <lastmod>2026-10-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
 </urlset>
